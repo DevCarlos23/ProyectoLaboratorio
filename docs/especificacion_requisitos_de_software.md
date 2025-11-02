@@ -380,6 +380,129 @@ El sistema interactuará con:
 
 ### 2.2 Funciones del producto
 
+El sistema TECLAB tendrá como propósito principal optimizar la administración, control y seguimiento de los laboratorios institucionales y del préstamo de equipos tecnológicos.
+Permitirá automatizar los procesos de registro, préstamo, reserva, mantenimiento y control de inventario, garantizando transparencia, trazabilidad y eficiencia en la gestión de los recursos.
+
+A continuación, se describen las funciones principales del sistema, organizadas por módulos funcionales:
+- Módulo de Gestión de Usuarios
+
+Registro de nuevos usuarios (estudiantes, docentes, técnicos y administradores) mediante formularios validados.
+
+Actualización y mantenimiento de la información personal y académica.
+
+Asignación automática de roles y permisos según el tipo de usuario (por ejemplo: “Administrador”, “Encargado de laboratorio”, “Estudiante”).
+
+Control de estados de usuarios (activo, suspendido, sancionado o egresado).
+
+Recuperación de contraseñas y autenticación mediante credenciales únicas.
+
+Registro de actividad del usuario dentro del sistema para fines de auditoría.
+
+- Módulo de Gestión de Laboratorios
+
+Registro y actualización de información detallada de cada laboratorio (nombre, ubicación, capacidad, tipo, equipamiento disponible y horario de funcionamiento).
+
+Control de disponibilidad de los laboratorios en tiempo real.
+
+Asignación de responsables por laboratorio, con permisos específicos de administración.
+
+Gestión de mantenimiento programado o correctivo del laboratorio.
+
+Visualización de horarios y reservas mediante calendario interactivo.
+
+Control de accesos al laboratorio, permitiendo saber qué usuarios lo han utilizado y cuándo.
+- Módulo de Gestión de Equipos y Recursos
+
+Registro completo de equipos tecnológicos (computadores, herramientas, periféricos, instrumentos, etc.).
+
+Identificación mediante códigos o etiquetas QR para agilizar su localización.
+
+Asociación de cada equipo con su laboratorio correspondiente.
+
+Actualización automática del estado del equipo (disponible, en préstamo, en mantenimiento o dado de baja).
+
+Registro del historial de cada equipo (fecha de ingreso, reparaciones, préstamos realizados, daños reportados).
+
+Control de inventario general con búsqueda avanzada por filtros (tipo de equipo, marca, número de serie, estado, laboratorio, etc.).
+
+Alerta automática de equipos con mantenimiento pendiente o próximos a vencimiento de garantía.
+- Módulo de Préstamo y Devolución
+
+Solicitud de préstamo de equipos o recursos por parte de los usuarios autorizados.
+
+Validación automática de disponibilidad y verificación de requisitos del usuario (por ejemplo, sin sanciones activas).
+
+Registro detallado del préstamo (equipo, fecha de entrega, fecha prevista de devolución, responsable y observaciones).
+
+Generación automática de comprobantes o recibos digitales.
+
+Control de devoluciones con validación de estado del equipo.
+
+Registro de retrasos, daños o pérdidas con posibilidad de generar sanciones.
+
+Historial completo de préstamos realizados por usuario y por equipo.
+- Módulo de Reservas
+
+Solicitud anticipada de reserva de equipos o laboratorios.
+
+Aprobación, modificación o cancelación de reservas por parte del encargado.
+
+Control de tiempos de reserva y liberación automática de recursos no utilizados.
+
+Integración con el calendario institucional para evitar conflictos de horarios.
+
+Envío de notificaciones automáticas al usuario cuando su reserva es aprobada, rechazada o modificada.
+- Módulo de Mantenimiento y Soporte Técnico
+
+Registro de incidentes o fallas reportadas por los usuarios.
+
+Asignación de tareas de mantenimiento preventivo o correctivo.
+
+Seguimiento del estado de reparación de equipos.
+
+Historial de mantenimientos realizados a cada equipo o laboratorio.
+
+Generación de reportes de equipos más problemáticos o con fallas recurrentes.
+- Módulo de Notificaciones y Comunicaciones
+
+Envío automático de correos o alertas del sistema para recordar fechas de devolución o vencimiento de préstamos.
+
+Notificaciones sobre disponibilidad de equipos o aprobación de reservas.
+
+Alertas al administrador sobre retrasos, daños o incidencias en equipos.
+
+Comunicados generales a los usuarios sobre mantenimiento, cambios de horario o novedades institucionales.
+
+Integración con panel de notificaciones dentro del sistema web.
+- Módulo de Reportes y Estadísticas
+
+Generación de reportes personalizados sobre uso de laboratorios, cantidad de préstamos y reservas realizadas.
+
+Estadísticas de equipos más utilizados, usuarios más activos y laboratorios con mayor demanda.
+
+Reportes de equipos en mantenimiento o dados de baja.
+
+Análisis de disponibilidad de recursos por fechas o periodos académicos.
+
+Exportación de reportes en formatos PDF y Excel.
+- Módulo de Administración del Sistema
+
+Creación y gestión de cuentas de administradores, técnicos y encargados de laboratorio.
+
+Configuración de parámetros generales del sistema (horarios de préstamo, duración máxima, sanciones por retraso, entre otros).
+
+Gestión de copias de seguridad y restauración de la base de datos.
+
+Control de accesos y auditoría de todas las operaciones realizadas.
+
+Gestión de roles, permisos y niveles de acceso a la información.
+
+Mantenimiento general del sistema (actualización de módulos, configuración de interfaz y soporte técnico).
+
+#### Resumen General del Funcionamiento
+
+El sistema TECLAB operará de forma integrada, conectando todos los módulos anteriores para garantizar una gestión centralizada de los recursos de laboratorio.
+El flujo principal permitirá que un usuario autenticado realice reservas o préstamos de equipos, los encargados gestionen la disponibilidad y mantenimiento, y los administradores supervisen toda la actividad mediante reportes y auditorías.
 
 <br>
 
