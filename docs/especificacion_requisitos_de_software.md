@@ -1,12 +1,12 @@
 # Especificación de Requisitos de Software (SRS)
-### Proyecto: [Nombre del Proyecto]
+### Proyecto: TECLAB
 *Versión [1.0]*
 
 <br>
 
-<img width="445" height="127" alt="image" src="https://github.com/user-attachments/assets/a2cb6e38-e0cb-4149-b56f-a295d28b4a78" />
+<img width="445" height="127" alt="LogoTecLab" src="https://raw.githubusercontent.com/DevCarlos23/ProyectoLaboratorio/main/docs/LogoTecLab.JPG" />
 
-*[Mes de Año]*
+#### Noviembre 2025
 
 <br>
 
@@ -30,7 +30,7 @@
 
 | Versión | Fecha | Autor | Descripción de Cambios |
 |---------|-------|-------|------------------------|
-| 1.0 | [DD/MM/AAAA] | [Nombre] | Versión inicial del documento |
+| 1.0 | [02/11/2025] | [Equipo TECLAB] | Versión inicial del documento |
 | | | | |
 
 <br>
@@ -84,175 +84,59 @@
 
 ## 1 INTRODUCCIÓN
 
-<!-- 
-═══════════════════════════════════════════════════════════════════════════════
-SECCIÓN 1: INTRODUCCIÓN
-═══════════════════════════════════════════════════════════════════════════════
-
-PROPÓSITO DE ESTA SECCIÓN:
-Proporcionar una visión general del documento de especificación de requisitos.
-Esta sección debe ser comprensible para TODOS los lectores, incluyendo aquellos
-sin conocimientos técnicos profundos (stakeholders, gerentes, clientes).
-
-IMPORTANCIA ACADÉMICA:
-La introducción establece el contexto del proyecto y facilita la comprensión
-del documento. Una buena introducción permite que diferentes stakeholders 
-comprendan rápidamente el propósito y alcance del sistema sin necesidad de 
-leer todo el documento.
-
-AUDIENCIA:
-- Equipo de desarrollo
-- Analistas de negocio
-- Gerentes de proyecto
-- Clientes/Stakeholders
-- Equipo de QA y testing
-- Futuros mantenedores del sistema
--->
-
 ### 1.1 Propósito
 
-<!-- 
-OBJETIVO DE ESTA SUBSECCIÓN:
-Explicar claramente POR QUÉ existe este documento y QUIÉN lo utilizará.
+Este documento de Especificación de Requisitos de Software (SRS), elaborado bajo la guía del estándar IEEE 830, describe los requisitos funcionales y no funcionales para el Sistema de Gestión de Laboratorios y Préstamo de Equipos "TECLAB", en su versión de Producto Mínimo Viable (MVP).
 
-QUÉ DEBE INCLUIR (2-4 párrafos):
-✓ Objetivo principal del documento SRS
-✓ Público objetivo específico (desarrolladores, testers, cliente, etc.)
-✓ Cómo se utilizará el documento en el ciclo de vida del proyecto
-✓ Alcance de versión o fase del proyecto (si aplica)
+El propósito primario de este SRS es establecer un acuerdo formal y una base técnica común de entendimiento entre el cliente (la Dirección de Tecnologías de la Información - DTI de la Universidad Tecnológica de los Andes - UTA) y el equipo de desarrollo. Servirá como la única fuente de verdad para la implementación, el diseño de casos de prueba por parte del equipo de QA, y la validación final del sistema por parte del cliente.
 
-PREGUNTAS GUÍA:
-1. ¿Para qué se crea este documento?
-2. ¿Quiénes lo van a leer y usar?
-3. ¿Qué decisiones se tomarán basándose en este documento?
-4. ¿Este documento cubre todo el sistema o solo una versión/módulo?
-
-ERRORES COMUNES A EVITAR:
-✗ Ser demasiado vago: "Este documento describe un sistema"
-✗ Confundir propósito del documento con propósito del sistema
-✗ No especificar la audiencia
-✗ Ser excesivamente técnico en esta sección
-
-EJEMPLO ACADÉMICO:
-"Este documento de Especificación de Requisitos de Software (SRS) describe los 
-requisitos funcionales y no funcionales para el Sistema de Gestión Bibliotecaria 
-'BiblioTech', versión 1.0. El propósito de este documento es establecer una base 
-común de entendimiento entre el cliente (Biblioteca Municipal Central) y el equipo 
-de desarrollo sobre lo que el sistema debe hacer y cómo debe comportarse.
-
-Este documento será utilizado por:
-- El equipo de desarrollo como guía para la implementación del sistema
-- Los analistas de QA para diseñar casos de prueba
-- El cliente para validar que sus necesidades están correctamente reflejadas
-- Los gerentes de proyecto para planificar recursos y cronogramas
-
-Las especificaciones aquí contenidas servirán como base contractual para la 
-aceptación del sistema y como referencia durante todo el ciclo de vida del 
-desarrollo."
--->
-
-[Escriba aquí el propósito de este documento. Use los párrafos necesarios para explicar claramente por qué existe este SRS y quiénes lo utilizarán.]
-
-<br>
+Este documento será utilizado por el equipo de desarrollo como guía de implementación, por los analistas para la gestión de cambios en el alcance, por el equipo de QA para el diseño de pruebas de aceptación, y por los gerentes para la planificación de recursos y seguimiento del cronograma de 4.5 meses establecido para el MVP.
 
 ### 1.2 Alcance
 
-<!-- 
-OBJETIVO DE ESTA SUBSECCIÓN:
-Definir claramente QUÉ está incluido y QUÉ NO está incluido en este sistema.
+Nombre del Sistema: Sistema de Gestión de Laboratorios y Préstamo de Equipos TECLAB (MVP v1.0)
 
-QUÉ DEBE INCLUIR:
-✓ Nombre oficial del sistema/software
-✓ Descripción breve de lo que hace el sistema (2-3 párrafos)
-✓ Beneficios principales que aportará
-✓ Objetivos específicos y medibles
-✓ Límites del sistema (qué NO incluye)
-✓ Relación con otros sistemas (si aplica)
+Descripción:
+TECLAB es una solución de software diseñada para digitalizar, organizar y gestionar centralizadamente los 8 laboratorios de cómputo y el servicio de préstamo de equipos tecnológicos (portátiles, tablets, cámaras) de la Universidad Tecnológica de los Andes (UTA). El sistema resolverá los problemas críticos de disponibilidad, seguridad, mantenimiento y trazabilidad que afectan actualmente a los 320 computadores de escritorio y los 125 equipos prestables.
 
-ESTRUCTURA SUGERIDA:
+El sistema se enfoca en tres módulos principales para el MVP: Gestión de Inventario y Mantenimiento, Sistema de Reservas (para laboratorios y equipos), y Gestión de Préstamo/Devolución. Este sistema proporcionará una plataforma confiable y eficiente, permitiendo a docentes y técnicos administrar los recursos y a los estudiantes acceder a ellos de manera justa.
 
-**Nombre del Sistema:**
-[Nombre oficial completo]
+Beneficios Principales:
 
-**Descripción:**
-[Explicar en 2-3 párrafos qué hace el sistema, cuál es su dominio de aplicación,
-y qué problema resuelve]
+Eliminación de la desorganización actual, estableciendo trazabilidad completa del 100% de los equipos.
 
-**Beneficios Principales:**
-- [Beneficio 1: ahorro de tiempo, reducción de errores, etc.]
-- [Beneficio 2]
-- [Beneficio 3]
+Reducción del tiempo de inactividad de los equipos a través de la automatización de flujos de mantenimiento.
 
-**Objetivos del Sistema:**
-1. [Objetivo medible 1: Ej. "Reducir el tiempo de préstamo de libros de 5 a 2 minutos"]
-2. [Objetivo medible 2]
-3. [Objetivo medible 3]
+Incremento en la seguridad y reducción de pérdidas por medio de registros detallados de salida y entrada.
 
-**Límites del Sistema (Fuera de Alcance):**
-- [Lo que NO hará el sistema: Ej. "El sistema NO manejará la contabilidad interna de la biblioteca"]
-- [Funcionalidad excluida explícitamente]
+Optimización en la asignación de recursos limitados (laboratorios y equipos portátiles).
 
-EJEMPLO ACADÉMICO:
+Objetivos del Sistema:
 
-**Nombre del Sistema:** Sistema de Gestión Bibliotecaria BiblioTech
+Lograr la trazabilidad del 100% de los 445 activos (320 de escritorio + 125 prestables) en el sistema en la primera semana de operación.
 
-**Descripción:**
-BiblioTech es un sistema integral de gestión bibliotecaria diseñado para automatizar 
-las operaciones diarias de bibliotecas públicas de tamaño mediano (10,000 a 50,000 
-volúmenes). El sistema gestiona el catálogo de materiales, préstamos, devoluciones, 
-reservas, y el registro de usuarios.
+Implementar el sistema de reservas online para los 8 laboratorios de cómputo y todos los equipos prestables.
 
-El sistema reemplazará el actual proceso manual de registro en tarjetas físicas y 
-planillas Excel, proporcionando una plataforma centralizada, confiable y de fácil 
-acceso para bibliotecarios y usuarios. BiblioTech también incluirá un módulo de 
-consulta en línea para que los usuarios puedan buscar materiales y verificar 
-disponibilidad desde sus hogares.
+Establecer un flujo de mantenimiento preventivo y correctivo que reduzca el tiempo promedio de reparación en un 40%.
 
-**Beneficios Principales:**
-- Reducción del tiempo promedio de atención por usuario de 5 a 2 minutos
-- Eliminación del 100% de los registros en papel
-- Disponibilidad de información en tiempo real sobre el inventario
-- Reducción de pérdidas de material mediante sistema automatizado de seguimiento
-- Acceso remoto al catálogo 24/7 para los usuarios
+Proveer la infraestructura para reportes estadísticos que ayuden a la DTI en la toma de decisiones.
 
-**Objetivos del Sistema:**
-1. Digitalizar el 100% del catálogo existente en los primeros 3 meses
-2. Reducir en un 60% el tiempo de procesamiento de préstamos y devoluciones
-3. Implementar sistema de notificaciones automáticas para devoluciones vencidas
-4. Proveer reportes estadísticos mensuales sobre uso de la biblioteca
-5. Garantizar disponibilidad del sistema del 99.5% durante horario de operación
+Asegurar la operatividad completa del MVP antes del inicio del próximo semestre académico (4.5 meses).
 
-**Límites del Sistema (Fuera de Alcance):**
-- Gestión contable y presupuestaria de la biblioteca
-- Sistema de punto de venta para librería anexa
-- Gestión de recursos humanos y nómina del personal
-- Sistema de seguridad física del edificio (cámaras, alarmas)
-- Plataforma de e-books o biblioteca digital de contenidos
--->
+Límites del Sistema (Fuera de Alcance del MVP):
 
-[Complete esta sección siguiendo la estructura sugerida arriba]
+Integración con Sistemas Financieros: El MVP NO gestionará la contabilidad o el presupuesto de la DTI o la UTA.
+
+Gestión de Cursos y Horarios Académicos: El sistema no sincronizará directamente las mallas curriculares de los programas. Solo gestionará la disponibilidad de los recursos físicos.
+
+Portal de Pago de Multas: Las penalizaciones por no devolución serán registradas, pero el procesamiento de pagos o la integración con pasarelas de pago NO están incluidas en el MVP.
+
+Seguridad Física (Hardware): El sistema NO gestionará elementos de seguridad física como cerraduras electrónicas o alarmas de movimiento.
 
 <br>
 
 ### 1.3 Personal involucrado
 
-<!-- 
-OBJETIVO DE ESTA SUBSECCIÓN:
-Identificar a todas las personas clave que participan en la definición, desarrollo,
-y validación del sistema.
-
-IMPORTANCIA:
-Esta sección es crucial para:
-- Establecer responsabilidades claras
-- Facilitar la comunicación entre stakeholders
-- Documentar la cadena de toma de decisiones
-- Permitir contacto directo cuando surjan dudas
-
-TABLA REQUERIDA:
-Complete la siguiente tabla para cada persona involucrada en el proyecto.
-Incluya mínimo: Cliente/Patrocinador, Jefe de Proyecto, Analista Principal,
-y Líder de Desarrollo.
--->
 
 | Nombre | Rol | Responsabilidades | Información de Contacto |
 |--------|-----|-------------------|-------------------------|
@@ -407,36 +291,13 @@ EJEMPLO COMPLETO PARA PROYECTO BIBLIOTECARIO:
 
 ### 1.6 Resumen
 
-<!-- 
-OBJETIVO DE ESTA SUBSECCIÓN:
-Proporcionar una sinopsis ejecutiva del contenido y organización del resto del
-documento SRS.
-
-IMPORTANCIA:
-Esta sección orienta al lector sobre:
-- Qué encontrará en cada sección principal
-- Cómo está organizado el documento
-- Dónde buscar información específica
-
-ESTRUCTURA RECOMENDADA:
-Un párrafo descriptivo por cada sección principal (Sección 2 y Sección 3),
-explicando qué tipo de información contiene.
-
-LONGITUD:
-2-4 párrafos máximo. Debe ser conciso pero informativo.
-
-EJEMPLO ACADÉMICO:
--->
-
 Este documento de Especificación de Requisitos de Software está organizado en cuatro secciones principales que siguen el estándar IEEE 830-1998.
 
-**La Sección 2, Descripción General**, presenta una visión global del sistema sin entrar en detalles técnicos. Incluye la perspectiva del producto dentro del contexto organizacional, un resumen de las funciones principales del sistema, las características de los diferentes tipos de usuarios que interactuarán con el sistema, y las restricciones generales bajo las cuales debe operar. También documenta las suposiciones y dependencias que podrían afectar los requisitos, así como las funcionalidades consideradas para versiones futuras.
+La Sección 2, Descripción General, presenta una visión global del sistema TECLAB sin entrar en detalles de implementación. Incluye la perspectiva del producto dentro del contexto organizacional de la UTA, un resumen de las funciones principales (Gestión de Inventario, Reservas y Préstamos), las características de los diferentes tipos de usuarios (Docentes, Técnicos, Estudiantes), y las restricciones generales bajo las cuales debe operar. También documenta las suposiciones y dependencias clave para el éxito del MVP.
 
-**La Sección 3, Requisitos Específicos**, constituye el núcleo técnico del documento. Esta sección detalla exhaustivamente todos los requisitos funcionales (lo que el sistema debe hacer) y los requisitos no funcionales (cómo debe comportarse el sistema). Incluye especificaciones detalladas de las interfaces del sistema (usuario, hardware, software y comunicación), criterios de rendimiento, requisitos de seguridad, fiabilidad y disponibilidad, así como restricciones de diseño y otros atributos de calidad que el sistema debe cumplir.
+La Sección 3, Requisitos Específicos, constituye el núcleo técnico del documento. Esta sección detalla exhaustivamente todos los requisitos funcionales (lo que el sistema debe hacer, como 'UC-01 solicitar préstamo de equipo') y los requisitos no funcionales (cómo debe comportarse el sistema, incluyendo rendimiento, seguridad y disponibilidad). Incluye especificaciones detalladas de las interfaces del sistema (usuario, hardware, software y comunicación), criterios de rendimiento, y otros atributos de calidad que el sistema debe cumplir.
 
-**La Sección 4, Apéndices**, contiene información complementaria que respalda las secciones anteriores, incluyendo diagramas del sistema, modelos de casos de uso, glosario extendido de términos, y matrices de trazabilidad que vinculan requisitos con casos de prueba. Esta sección también puede incluir prototipos de interfaces, esquemas de bases de datos, y otros artefactos que ayudan a clarificar los requisitos especificados.
-
-[Ajuste este resumen según la organización específica de su documento]
+La Sección 4, Apéndices, contiene información complementaria que respalda las secciones anteriores, incluyendo el Glosario de términos específicos (como "Activo Prestables" o "Faltas por No Show") y matrices de trazabilidad. En el contexto de este proyecto, incluirá los modelos de Casos de Uso (UML) y diagramas del sistema, así como referencias a artefactos clave como el prototipo de alta fidelidad.
 
 <br>
 
@@ -444,234 +305,85 @@ Este documento de Especificación de Requisitos de Software está organizado en 
 
 ## 2 DESCRIPCIÓN GENERAL
 
-<!-- 
-═══════════════════════════════════════════════════════════════════════════════
-SECCIÓN 2: DESCRIPCIÓN GENERAL
-═══════════════════════════════════════════════════════════════════════════════
+### 2.1 Perspectiva del Producto
 
-PROPÓSITO DE ESTA SECCIÓN:
-Proporcionar contexto y visión general del sistema sin entrar en detalles técnicos
-específicos. Esta sección ayuda a los lectores a comprender el "panorama general"
-antes de sumergirse en los requisitos específicos.
+#### Propósito
 
-IMPORTANCIA ACADÉMICA:
-Esta sección establece el contexto de negocio y técnico que justifica los requisitos
-específicos que vendrán en la Sección 3. Es fundamental para que stakeholders no
-técnicos comprendan el propósito y las capacidades del sistema.
+Esta sección proporciona un contexto y visión general del sistema de préstamo de equipos de laboratorio, sin entrar en detalles técnicos específicos. El objetivo es que los lectores comprendan el panorama general antes de revisar los requisitos detallados en la Sección 3.
 
-AUDIENCIA PRINCIPAL:
-- Gerentes y ejecutivos
-- Analistas de negocio
-- Arquitectos de sistemas
-- Nuevos miembros del equipo
+#### Visión General del Sistema
 
-PRINCIPIO CLAVE:
-Todo lo descrito en la Sección 2 debe ser GENERAL. Los detalles específicos,
-medibles y verificables van en la Sección 3.
--->
+El producto a desarrollar es un sistema de gestión de préstamos de equipos, orientado a controlar la disponibilidad, reserva y entrega de instrumentos del laboratorio. El sistema permitirá al personal autorizado (administradores, técnicos y docentes) registrar préstamos, devoluciones y programar mantenimientos preventivos, asegurando un uso eficiente y organizado de los recursos del laboratorio.
+El sistema se integrará con los módulos existentes de autenticación de usuarios y base de datos del laboratorio, y proporcionará interfaces para:
+- Usuarios internos: Registrar préstamos, devoluciones y consultas sobre disponibilidad de equipos.
+- Base de datos: Almacenar y recuperar información histórica sobre préstamos, devoluciones y estado de los equipos.
+- Módulo de reportes: Generar reportes de uso de equipos, frecuencia de préstamos y mantenimiento en formatos PDF o Excel.
 
-### 2.1 Perspectiva del producto
+#### Relaciones con Otros Sistemas
 
-<!-- 
-OBJETIVO DE ESTA SUBSECCIÓN:
-Situar el sistema en su contexto más amplio: ¿Es un sistema completamente nuevo?
-¿Reemplaza un sistema existente? ¿Es parte de un sistema mayor? ¿Cómo se relaciona
-con otros sistemas?
+- Módulo de autenticación: Validación de usuarios autorizados para realizar préstamos y devoluciones.
+- Base de datos del laboratorio: Almacenamiento y recuperación de registros históricos de préstamos y mantenimiento.
+- Sistemas externos (futuros): Posible integración con sistemas de notificaciones (correo electrónico o SMS) para avisar sobre devoluciones pendientes o mantenimiento de equipos.
 
-QUÉ DEBE INCLUIR:
+#### Restricciones y Consideraciones
 
-1. CONTEXTO DEL SISTEMA:
-  - Si es un nuevo producto independiente, reemplazo de sistema legacy, o 
-    componente de un sistema mayor
-  - Relación con otros sistemas existentes en la organización
+Solo el personal autorizado puede registrar préstamos o devoluciones; los estudiantes o usuarios finales no tendrán acceso administrativo.
+Se debe garantizar la seguridad y consistencia de la información sobre préstamos y disponibilidad de equipos.
+El sistema será implementado como aplicación web, compatible con navegadores modernos y dispositivos de escritorio.
+ 
+### 2.1.2 Perspectiva del Producto
 
-2. INTERFACES DEL SISTEMA (Vista general):
-  - Interfaces con sistemas externos (NO detalles, solo mención)
-  - Interfaces con hardware específico
-  - Interfaces con otros componentes de software
+#### Contexto del Sistema
 
-3. DIAGRAMA DE CONTEXTO (Altamente recomendado):
-  Un diagrama simple que muestre:
-  - El sistema como caja central
-  - Actores externos (usuarios, otros sistemas)
-  - Flujos de información principales
+El sistema de Préstamo de Equipos de Laboratorio es un producto completamente nuevo que reemplazará parcialmente los registros manuales actuales de préstamos y devoluciones de equipos. Actualmente, el control se realiza mediante hojas de cálculo Excel y registros físicos, lo que dificulta el seguimiento del estado de los equipos y el historial de préstamos.
+El sistema funcionará como una aplicación web independiente, pero interactuará con ciertos sistemas externos para mejorar la funcionalidad y seguridad:
+- ódulo de autenticación institucional: Para validar credenciales de los usuarios internos (docentes, técnicos y administradores).
+- Servidor de correo electrónico institucional: Para notificaciones automáticas de devoluciones y reservas de equipos.
+- Servidor de respaldo centralizado del laboratorio: Para garantizar la integridad y disponibilidad de la información.
+El sistema digitalizará completamente los procesos de préstamo, devolución y consulta de equipos, manteniendo la lógica de negocio actual pero eliminando el manejo de papel y hojas de cálculo.
 
-EJEMPLO ACADÉMICO:
+#### Relación con Sistemas Existentes
 
-**Contexto del Sistema:**
-
-BiblioTech es un sistema de información nuevo que reemplazará completamente el 
-actual sistema manual de gestión bibliotecaria basado en tarjetas físicas y hojas 
-de cálculo Excel. El sistema operará como una aplicación independiente pero 
-compartirá cierta información con sistemas externos de la biblioteca.
-
-BiblioTech NO es un subsistema de un sistema mayor, sino una aplicación completa 
-y autónoma diseñada específicamente para las necesidades de la Biblioteca Municipal 
-Central. Sin embargo, el sistema deberá integrarse con:
-
-- Sistema de identificación de usuarios de la municipalidad (para validar datos 
-  de ciudadanos)
-- Sistema de correo electrónico institucional (para envío de notificaciones)
-- Sistema de respaldo centralizado de la municipalidad (para backup automático)
-
-**Relación con Sistemas Existentes:**
-
-El sistema actual que BiblioTech reemplazará consiste en:
-- Tarjetas físicas de catálogo ordenadas alfabéticamente
-- Planillas Excel para control de préstamos
-- Registro manual en libros de visitas
-- Archivo físico de fichas de usuarios
-
-BiblioTech digitalizará completamente estos procesos, manteniendo la misma 
-lógica de negocio pero eliminando el manejo de papel.
-
-**Interfaces del Sistema (Visión General):**
-
-BiblioTech interactuará con:
-1. **Usuarios del Sistema**: Bibliotecarios, administradores, y usuarios finales 
-  (vía interfaz web)
-2. **Sistemas Externos**: 
-  - API del Sistema de Identificación Municipal
-  - Servidor SMTP para envío de correos
-  - Servidor de respaldo institucional
-3. **Hardware**: 
-  - Lectores de código de barras (para escaneo de libros y carnets)
-  - Impresoras térmicas (para comprobantes de préstamo)
-  - Servidor de base de datos
-
-[Incluya aquí un diagrama de contexto del sistema]
-
-ESTRUCTURA DEL DIAGRAMA DE CONTEXTO:
-Puede usar notación simple con cajas y flechas. Ejemplo en texto:
-
-┌─────────────────┐
-│    Usuarios     │────┐
-│   de Internet   │    │
-└─────────────────┘    │
-                       ▼
-┌────────────────┐   ┌──────────────────────┐   ┌──────────────────┐
-│ Bibliotecarios │─▶│   Sistema BiblioTech │─▶│  Sistema Email   │
-└────────────────┘   └──────────────────────┘   └──────────────────┘
-                              │
-                              ▼
-                     ┌──────────────────┐
-                     │  Base de Datos   │
-                     └──────────────────┘
-
-NOTA: En su documento final, reemplace esto con un diagrama formal usando herramientas
-como Draw.io, notación mermaid, Lucidchart, o similar.
--->
-
-[Complete esta subsección describiendo la perspectiva de su producto e incluya un diagrama de contexto]
+Actualmente, los procesos que serán reemplazados incluyen:
+- Hojas de cálculo Excel para registro de préstamos y devoluciones.
+- Registro físico de equipos prestados y devueltos.
+- Control manual del estado de los equipos y su mantenimiento.
+El nuevo sistema permitirá automatizar estos procesos, centralizando la información y facilitando el acceso a reportes estadísticos de uso de los equipos.
+#### Interfaces del Sistema (Visión General)
+El sistema interactuará con:
+1. Usuarios del Sistema:
+- Docentes, técnicos y administradores, a través de una interfaz web para registrar préstamos, devoluciones y generar reportes.
+2. Sistemas Externos:
+- Módulo de autenticación institucional (para validación de usuarios).
+- Servidor SMTP para envío de correos de notificación.
+- Servidor de respaldo institucional para almacenamiento seguro.
+3. Hardware:
+- Computadoras de escritorio o portátiles del personal autorizado.
+- Servidor de base de datos para almacenamiento centralizado.
+- Impresoras opcionales para comprobantes de préstamo.
+ 
+          ┌──────────────────┐
+          │     Usuarios     │────┐
+          │ Docentes/Técnicos│    │
+          └──────────────────┘    ▼
+                            ┌──────────────────────────────┐
+                            │Sistema de Préstamo de Equipos│
+                            └──────────────────────────────┘
+                             │             │               │
+                             ▼             ▼               ▼
+                    ┌─────────────┐ ┌─────────────┐ ┌──────────────┐
+                    │ Base de     │ │ Servidor de │ │ Servidor de  │
+                    │ Datos       │ │ Correo      │ │ Autenticación│
+                    └─────────────┘ └─────────────┘ └──────────────┘
 
 <br>
 
 ### 2.2 Funciones del producto
 
-<!-- 
-OBJETIVO DE ESTA SUBSECCIÓN:
-Proporcionar un resumen de las funciones PRINCIPALES del sistema. NO se trata de
-listar todos los requisitos funcionales (eso va en la Sección 3.1), sino de dar
-una visión general de las capacidades del sistema.
-
-IMPORTANCIA:
-Esta subsección permite a los lectores no técnicos comprender rápidamente qué
-hará el sistema sin perderse en detalles técnicos.
-
-NIVEL DE DETALLE:
-- ALTO NIVEL: "El sistema gestionará préstamos de libros"
-- NO: "El sistema validará que el ISBN tenga formato correcto usando expresión regular"
-
-ORGANIZACIÓN SUGERIDA:
-Agrupe las funciones por módulos o áreas funcionales del sistema.
-
-FORMATO RECOMENDADO:
-Use viñetas con descripciones de 1-2 líneas por función principal.
-
-EJEMPLO ACADÉMICO:
-
-El Sistema BiblioTech proporcionará las siguientes funciones principales:
-
-**Gestión de Catálogo:**
-- Registro y mantenimiento de materiales bibliográficos (libros, revistas, DVDs, etc.)
-- Catalogación según estándares bibliotecarios
-- Búsqueda avanzada de materiales por múltiples criterios
-- Gestión de múltiples ejemplares de un mismo título
-
-**Gestión de Usuarios:**
-- Registro de nuevos usuarios de la biblioteca
-- Mantenimiento de información de usuarios (actualización de datos, foto, etc.)
-- Gestión de diferentes tipos de membresía (estudiante, adulto, infantil)
-- Control de estado de usuarios (activo, suspendido, moroso)
-
-**Gestión de Préstamos:**
-- Procesamiento de préstamos y devoluciones de material
-- Renovación de préstamos
-- Sistema de reservas de materiales no disponibles
-- Cálculo automático de multas por retraso
-- Generación de comprobantes de préstamo
-
-**Gestión de Notificaciones:**
-- Notificaciones automáticas de vencimiento de préstamos
-- Alertas de disponibilidad de material reservado
-- Recordatorios de multas pendientes
-- Comunicados generales a usuarios
-
-**Reportes y Estadísticas:**
-- Reportes de materiales más prestados
-- Estadísticas de uso de la biblioteca
-- Reportes de inventario
-- Estado de cuenta de usuarios (préstamos activos, multas, etc.)
-
-**Administración del Sistema:**
-- Gestión de usuarios del sistema (bibliotecarios, administradores)
-- Configuración de parámetros del sistema (días de préstamo, multas, etc.)
-- Respaldo y restauración de datos
-- Auditoría de operaciones del sistema
-
-OPCIONAL: Puede incluir un diagrama de alto nivel mostrando los módulos principales
-y cómo se relacionan.
-
-NOTA IMPORTANTE:
-Esta NO es la especificación detallada de requisitos funcionales. Cada función
-aquí mencionada se expandirá con requisitos específicos, medibles y verificables
-en la Sección 3.1.
--->
-
-[Complete esta subsección describiendo las funciones principales de su sistema, agrupadas lógicamente]
 
 <br>
 
 ### 2.3 Características de los usuarios
-
-<!-- 
-OBJETIVO DE ESTA SUBSECCIÓN:
-Identificar y describir los diferentes tipos de usuarios que interactuarán con
-el sistema, incluyendo sus características relevantes que puedan afectar el diseño.
-
-IMPORTANCIA:
-Comprender a los usuarios es fundamental para:
-- Diseñar interfaces apropiadas para cada perfil
-- Establecer niveles adecuados de seguridad y permisos
-- Determinar requisitos de capacitación
-- Identificar necesidades de usabilidad y accesibilidad
-
-QUÉ INCLUIR PARA CADA TIPO DE USUARIO:
-
-1. Tipo de usuario (nombre del rol)
-2. Descripción general del rol
-3. Responsabilidades en el sistema
-4. Nivel de experiencia técnica
-5. Nivel de experiencia con el dominio del negocio
-6. Frecuencia de uso del sistema
-7. Funciones principales que utilizará
-8. Necesidades especiales (accesibilidad, idioma, etc.)
-
-FORMATO SUGERIDO:
-Use una tabla o subsecciones para cada tipo de usuario.
-
-TABLA RECOMENDADA:
--->
 
 | Caracteristicas        | Estudiante                                                                                                                                                                                                                      | Docente                                                                                                                                                                                         | Monitor Laboratorio                                                                                                                                                                                    | Encargado Préstamos                                                                                                                                                             | Tecnico de Soporte                                                                                                                                                          | Coordinadora de Laboratorios                                                                                                        | Director TI                                                                                                                                                                 |
 |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -684,484 +396,146 @@ TABLA RECOMENDADA:
 | Necesidades Especiales | No aplica                                                                                                                                                                                                                       | No aplcia                                                                                                                                                                                       |                                                                                                                                                                                                        | No aplica                                                                                                                                                                       | No aplica                                                                                                                                                                   | No aplica                                                                                                                           | Acceso rapido a los reportes                                                                                                                                                |
 
 
-<!-- 
-EJEMPLO ACADÉMICO DETALLADO:
-
-**TIPO DE USUARIO 1: Bibliotecario**
-
-- **Descripción**: Personal de la biblioteca encargado de las operaciones diarias 
-  de préstamos, devoluciones, y atención al público.
-
-- **Responsabilidades en el Sistema**:
-  - Registrar préstamos y devoluciones de materiales
-  - Registrar nuevos usuarios
-  - Procesar pagos de multas
-  - Atender consultas sobre disponibilidad de materiales
-  - Generar reportes básicos de operaciones diarias
-
-- **Nivel de Experiencia Técnica**: Medio. Tienen conocimientos básicos de informática 
-  pero no son expertos técnicos. Pueden manejar aplicaciones de oficina estándar.
-
-- **Experiencia en el Dominio**: Alta. Conocen perfectamente los procesos bibliotecarios 
-  y la organización de materiales. Promedio de 5+ años trabajando en bibliotecas.
-
-- **Frecuencia de Uso**: Diaria, durante toda su jornada laboral (8 horas al día).
-
-- **Funciones Principales que Utilizará**:
-  - Módulo de préstamos y devoluciones
-  - Módulo de gestión de usuarios
-  - Búsqueda de materiales en catálogo
-  - Gestión de reservas
-  - Procesamiento de multas
-
-- **Necesidades Especiales**: 
-  - Interfaz intuitiva que permita realizar operaciones rápidamente
-  - Capacidad de trabajo con interrupciones frecuentes (atención al público)
-  - Acceso rápido a ayuda contextual
-
-**TIPO DE USUARIO 2: Administrador del Sistema**
-
-- **Descripción**: Personal técnico o jefe de biblioteca responsable de la configuración 
-  y administración del sistema BiblioTech.
-
-- **Responsabilidades en el Sistema**:
-  - Configurar parámetros operativos del sistema
-  - Gestionar cuentas de bibliotecarios
-  - Mantener el catálogo (altas, bajas, modificaciones masivas)
-  - Generar reportes estadísticos y ejecutivos
-  - Realizar respaldos del sistema
-  - Auditar operaciones del sistema
-
-- **Nivel de Experiencia Técnica**: Alto. Tiene conocimientos avanzados de sistemas 
-  informáticos y administración de aplicaciones.
-
-- **Experiencia en el Dominio**: Alta. Comprende todos los procesos bibliotecarios 
-  desde una perspectiva gerencial.
-
-- **Frecuencia de Uso**: Semanal para tareas de configuración y mantenimiento, 
-  diaria para consulta de reportes y auditoría.
-
-- **Funciones Principales que Utilizará**:
-  - Panel de administración completo
-  - Configuración de parámetros del sistema
-  - Gestión de usuarios del sistema
-  - Generación de reportes avanzados
-  - Herramientas de respaldo y restauración
-  - Visualización de logs de auditoría
-
-- **Necesidades Especiales**: 
-  - Acceso a funciones avanzadas no disponibles para usuarios regulares
-  - Herramientas de diagnóstico y monitoreo del sistema
-  - Capacidad de realizar operaciones masivas sobre datos
-
-**TIPO DE USUARIO 3: Usuario/Cliente de la Biblioteca**
-
-- **Descripción**: Ciudadanos registrados en la biblioteca que consultan el catálogo 
-  y su información personal desde Internet.
-
-- **Responsabilidades en el Sistema**:
-  - Buscar materiales disponibles en la biblioteca
-  - Consultar sus préstamos activos
-  - Renovar préstamos (si es posible)
-  - Hacer reservas de materiales
-  - Consultar su historial de préstamos
-
-- **Nivel de Experiencia Técnica**: Bajo a Medio. Varían desde personas con 
-  conocimientos básicos hasta usuarios experimentados de Internet.
-
-- **Experiencia en el Dominio**: Baja a Media. Algunos son usuarios frecuentes 
-  de bibliotecas, otros son nuevos usuarios.
-
-- **Frecuencia de Uso**: Variable. Desde uso semanal hasta esporádico (mensual 
-  o menos frecuente).
-
-- **Funciones Principales que Utilizará**:
-  - Búsqueda de materiales en catálogo
-  - Consulta de cuenta personal
-  - Sistema de reservas
-  - Renovación de préstamos
-
-- **Necesidades Especiales**: 
-  - Interfaz muy intuitiva, sin necesidad de capacitación
-  - Accesibilidad (cumplimiento WCAG 2.1 nivel AA)
-  - Disponible 24/7 desde cualquier dispositivo (responsive)
-  - Multiidioma (si aplica)
-  - Protección de datos personales
--->
-
 
 <br>
 
 ### 2.4 Restricciones
 
-<!-- 
-OBJETIVO DE ESTA SUBSECCIÓN:
-Documentar todas las limitaciones o restricciones que afectarán el diseño e 
-implementación del sistema. Estas restricciones pueden ser técnicas, de negocio,
-regulatorias, o de cualquier otra naturaleza.
+2.4.1 Restricciones Regulatorias y Legales
 
-IMPORTANCIA:
-Las restricciones son CRÍTICAS porque:
-- Limitan las opciones de diseño e implementación
-- Pueden afectar costos y cronogramas
-- Deben ser conocidas desde el inicio del proyecto
-- Son generalmente NO NEGOCIABLES
+- El sistema debe cumplir con la Ley 1581 de 2012 sobre Protección de Datos Personales.
+- Cumplimiento de la Ley 1712 de 2014 de Transparencia y Acceso a la Información Pública:
+- Los datos agregados sobre uso e inversión deben ser públicos.
+- Los datos personales de usuarios no deben divulgarse.
+- Cumplimiento del Decreto 1510 de 2013 sobre control de bienes del Estado:
+- Debe existir trazabilidad completa de ubicación y responsable de cada activo tecnológico.
+- Los registros de auditoría deben conservarse por al menos 2 años.
+- El sistema no debe permitir instalación de software no licenciado y debe emitir alertas sobre licencias próximas a vencer.
+- Debe generar reportes de cumplimiento para Microsoft, Adobe y Autodesk durante auditorías.
 
-TIPOS COMUNES DE RESTRICCIONES:
+2.4.2 Restricciones Tecnológicas
 
-1. Restricciones Regulatorias/Legales
-2. Restricciones de Hardware
-3. Restricciones de Software
-4. Restricciones de Interfaces con Aplicaciones
-5. Restricciones Paralelas (procesos concurrentes)
-6. Restricciones de Auditoría
-7. Restricciones de Lenguaje de Programación
-8. Restricciones de Bases de Datos
-9. Restricciones de Estándares
-10. Restricciones de Presupuesto y Recursos
+- El sistema debe operar en servidores locales (on-premise); el uso de infraestructura en la nube no está permitido.
+- Especificaciones del servidor:
+- Linux Ubuntu Server 22.04 LTS
+- 8 GB de RAM
+- 500 GB de almacenamiento
+- Red institucional:
+- LAN con switches Cisco
+- WiFi institucional (eduroam con autenticación RADIUS)
+- Integración obligatoria:
+- Sistema de autenticación Active Directory (LDAP)
+- Exportación e importación de datos en CSV o Excel
+- Compatibilidad de clientes:
+- Navegadores: Chrome 100+, Firefox 90+, Edge 100+
+- Tablets Android 10 (usadas por monitores)
 
-FORMATO SUGERIDO:
-Organice por categorías para mejor comprensión.
+#### Restricciones adicionales:
 
-EJEMPLO ACADÉMICO:
+Algunos laboratorios (como Electrónica) operan en red aislada; el sistema debe funcionar sin conexión y sincronizar datos posteriormente.
 
-**Restricciones Regulatorias y Legales:**
+Los carnets actuales usan código de barras (Code128), pero el sistema debe ser compatible con NFC para futuras migraciones.
 
-- El sistema DEBE cumplir con la Ley de Protección de Datos Personales vigente 
-  en el país, garantizando la confidencialidad de información de usuarios.
-  
-- Toda eliminación de datos personales debe ser irreversible y cumplir con el 
-  "derecho al olvido" establecido en la legislación.
+2.4.3 Restricciones de Implementación
 
-- El sistema debe mantener registros de auditoría de acceso a datos personales 
-  por un período mínimo de 2 años.
+- El sistema debe desarrollarse con tecnologías open source (sin licencias propietarias).
+- Plazo máximo: 4.5 meses (MVP operativo en enero de 2026).
+- Presupuesto total: $85,000,000 COP (~$21,000 USD).
+- Distribución presupuestaria:
 
-**Restricciones Tecnológicas:**
+- Desarrollo del sistema: $52,000,000
+- Hardware adicional: $18,000,000
+- Etiquetado de equipos: $5,000,000
+- Capacitación y puesta en marcha: $10,000,000
+- Base de datos: PostgreSQL versión 13 o superior.
+- Disponibilidad mínima: 99% durante horario de laboratorios (7:00 AM – 9:00 PM, lunes a sábado).
+- El sistema debe ser 100% web, sin requerir instalación local.
+- Lenguajes de desarrollo recomendados: Java o Python (compatibilidad institucional).
 
-- El sistema DEBE ejecutarse en los servidores existentes de la municipalidad 
-  (Linux Ubuntu Server 22.04 LTS, 8GB RAM, 500GB disco).
+2.4.4 Restricciones de Interfaz e Integración
 
-- El sistema DEBE ser compatible con los navegadores web utilizados en la biblioteca: 
-  Chrome 90+, Firefox 88+, Edge 90+.
+- Integración obligatoria con Active Directory (LDAP institucional).
+- Exportación de reportes en formato CSV o Excel para la Contraloría.
+- Compatibilidad con lectores de código de barras y QR (Zebra DS2208 o equivalente).
+- Uso exclusivo del servidor SMTP institucional (mail.uta.edu.co) para notificaciones automáticas.
+- Interfaz web responsive y optimizada para dispositivos móviles.
+- El sistema debe contar con una API interna para registrar software, versiones y equipos asociados.
 
-- El sistema DEBE integrarse con el lector de código de barras marca Zebra modelo 
-  DS2208 ya adquirido por la biblioteca.
+2.4.5 Restricciones Operacionales
 
-**Restricciones de Implementación:**
+- Capacidad mínima: Soportar 1,000 usuarios concurrentes en picos de demanda.
+- Migración inicial:
+- 450 equipos (320 desktops, 85 portátiles, 40 tablets, cámaras y accesorios).
+- Etiquetado físico de equipos (QR/códigos de barras) antes del 31 de diciembre de 2025.
+- Migración de datos:
+- No puede causar interrupción del servicio por más de 4 horas.
+- Capacitación máxima:
+- Monitores: 3 horas
+- Encargada de préstamos: 6 horas
+- Técnicos: 4 horas
+- Estudiantes: autoguiada mediante videos y tutoriales
+- Auditoría: El sistema debe mantener bitácoras de actividad accesibles solo a personal autorizado.
 
-- El desarrollo DEBE realizarse utilizando tecnologías open source para evitar 
-  costos de licenciamiento.
+2.4.6 Restricciones Éticas y de Acceso
 
-- El sistema DEBE estar implementado y en producción en un plazo máximo de 6 meses.
+- Privacidad: No se permite monitorear pantallas ni registrar actividades personales.
+- Equidad: El sistema de reservas debe garantizar igualdad de acceso a todos los estudiantes.
+- Transparencia: Cualquier algoritmo de priorización o penalización debe ser explicable y auditable.
+- No discriminación:
+- Las sanciones deben ser proporcionales y graduales.
+- No se deben aplicar bloqueos permanentes automáticos.
 
-- El equipo de desarrollo está limitado a 4 personas (2 desarrolladores, 1 analista, 
-  1 tester).
+2.4.7 Restricciones Presupuestarias y de Recursos
 
-**Restricciones de Interfaz:**
+- Presupuesto máximo: $85,000,000 COP (no ampliable).
+- Equipo de trabajo limitado a:
+- 2 desarrolladores
+- 1 analista
+- 1 tester
 
-- El sistema DEBE integrarse con la API REST del Sistema Municipal de Identificación 
-  de Ciudadanos (versión 2.1) para validación de datos de usuarios.
+### Hardware adicional permitido:
 
-- El sistema DEBE utilizar el servidor SMTP institucional (mail.municipalidad.gob) 
-  para envío de correos electrónicos.
+- 10 lectores de código de barras
+- 8 tablets para monitore
+- 1 impresora de etiquetas
 
-**Restricciones Operacionales:**
-
-- El sistema DEBE funcionar con la conexión a Internet existente (10 Mbps simétrica), 
-  la cual NO se puede mejorar.
-
-- La base de datos DEBE ser PostgreSQL versión 13 o superior, ya que es el estándar 
-  de la municipalidad.
-
-- El sistema NO PUEDE requerir instalación de software adicional en las computadoras 
-  de los bibliotecarios (debe ser 100% web).
-
-**Restricciones de Migración de Datos:**
-
-- El sistema DEBE permitir importar datos del sistema Excel actual, incluyendo 
-  un mínimo de 15,000 registros de usuarios y 25,000 materiales bibliográficos.
-
-- La migración de datos NO puede causar interrupción del servicio de la biblioteca 
-  por más de 4 horas.
-
-**Restricciones de Capacitación:**
-
-- La capacitación del personal DEBE completarse en máximo 16 horas totales 
-  (2 días de 8 horas).
-
-- Los materiales de capacitación DEBEN estar en español.
-
-**Restricciones Presupuestarias:**
-
-- El presupuesto total del proyecto NO puede exceder $25,000 USD.
-
-- NO se puede contratar más personal; el trabajo debe realizarse con el equipo 
-  disponible.
-
-NOTA IMPORTANTE:
-Sea específico. NO escriba "el sistema debe ser rápido" (eso es un requisito de 
-rendimiento). Escriba restricciones concretas como "el sistema debe ejecutarse 
-en servidores con máximo 8GB de RAM".
--->
-
-[Complete esta subsección documentando todas las restricciones aplicables a su proyecto]
+No se permite contratación externa adicional ni adquisición de software propietario con costos recurrentes.
 
 <br>
 
 ### 2.5 Suposiciones y dependencias
 
-<!-- 
-OBJETIVO DE ESTA SUBSECCIÓN:
-Documentar todas las suposiciones (assumptions) hechas durante la especificación
-de requisitos y las dependencias externas que podrían afectar el desarrollo o
-funcionamiento del sistema.
-
-IMPORTANCIA CRÍTICA:
-- Las suposiciones son premisas que SE ASUMEN CIERTAS pero que podrían cambiar
-- Si una suposición resulta incorrecta, los requisitos pueden necesitar revisión
-- Las dependencias son factores externos fuera del control del equipo
-- Identificarlas permite gestión de riesgos proactiva
-
-DIFERENCIA CLAVE:
-- SUPOSICIÓN: "Se asume que el usuario tiene conexión a Internet"
-- DEPENDENCIA: "El sistema depende de la disponibilidad de la API externa X"
-
-CATEGORÍAS COMUNES:
-
-1. Suposiciones sobre Usuarios
-2. Suposiciones sobre el Entorno de Operación
-3. Suposiciones sobre Datos
-4. Dependencias de Sistemas Externos
-5. Dependencias de Terceros
-6. Dependencias Tecnológicas
-
-FORMATO SUGERIDO:
-Liste cada suposición/dependencia numerada para fácil referencia.
-
-EJEMPLO ACADÉMICO:
-
-**Suposiciones:**
-
-1. **Conectividad**: Se asume que la biblioteca cuenta con conexión a Internet 
-  estable y continua durante el horario de operación. Si la conexión falla, 
-  algunas funcionalidades no estarán disponibles.
-
-2. **Hardware**: Se asume que las computadoras de las estaciones de trabajo de 
-  bibliotecarios cumplen con los requisitos mínimos: procesador dual-core 2GHz, 
-  4GB RAM, navegador web actualizado.
-
-3. **Conocimientos del Personal**: Se asume que el personal de biblioteca tiene 
-  conocimientos básicos de informática (uso de navegador web, mouse, teclado) 
-  y que recibirá capacitación específica sobre BiblioTech antes del lanzamiento.
-
-4. **Proceso de Negocio**: Se asume que los procesos bibliotecarios actuales 
-  (políticas de préstamo, cálculo de multas, categorización de materiales) 
-  continuarán siendo válidos en el sistema digitalizado.
-
-5. **Volumen de Datos Inicial**: Se asume que el catálogo inicial contiene 
-  aproximadamente 25,000 materiales bibliográficos y 15,000 usuarios registrados, 
-  con un crecimiento anual estimado del 10%.
-
-6. **Usuarios Finales**: Se asume que los usuarios de la biblioteca que accedan 
-  al catálogo en línea tienen conocimientos básicos de navegación web y acceso 
-  a un dispositivo con navegador (computadora, tablet, smartphone).
-
-7. **Datos de Migración**: Se asume que los datos en Excel del sistema actual 
-  están razonablemente limpios y estructurados, y que cualquier inconsistencia 
-  será resuelta antes de la migración.
-
-8. **Apoyo Institucional**: Se asume que la dirección de la biblioteca y la 
-  municipalidad proporcionarán el apoyo necesario para la adopción del sistema, 
-  incluyendo tiempo para capacitación del personal.
-
-9. **Mantenimiento**: Se asume que la municipalidad proporcionará soporte técnico 
-  continuo para el servidor y la infraestructura de red.
-
-**Dependencias:**
-
-1. **Sistema Municipal de Identificación (SMI)**: El módulo de registro de usuarios 
-  DEPENDE de la disponibilidad y correcto funcionamiento de la API del SMI para 
-  validar identidad de ciudadanos. Si la API no está disponible, el registro de 
-  nuevos usuarios se verá afectado.
-
-2. **Servicio de Correo Electrónico**: El módulo de notificaciones DEPENDE del 
-  servidor SMTP institucional (mail.municipalidad.gob). Si el servicio de correo 
-  falla, las notificaciones automáticas no se enviarán.
-
-3. **Proveedor de Hosting**: El sistema DEPENDE de la infraestructura de servidores 
-  de la municipalidad. Cualquier mantenimiento, actualización o problema en esta 
-  infraestructura afectará la disponibilidad de BiblioTech.
-
-4. **Código de Barras**: El sistema DEPENDE del estándar ISBN (International Standard 
-  Book Number) para identificación de libros. Materiales sin ISBN requerirán 
-  códigos alternativos generados internamente.
-
-5. **Navegadores Web**: El sistema DEPENDE de que los navegadores web mantengan 
-  compatibilidad con los estándares HTML5, CSS3 y JavaScript ES6. Cambios 
-  significativos en navegadores podrían requerir actualizaciones del sistema.
-
-6. **Base de Datos PostgreSQL**: El sistema DEPENDE de PostgreSQL y sus 
-  actualizaciones de seguridad. Migraciones a nuevas versiones mayores de 
-  PostgreSQL requerirán pruebas exhaustivas.
-
-7. **Lectores de Código de Barras**: El sistema DEPENDE de los lectores de código 
-  de barras Zebra DS2208. Si se reemplazan por otro modelo, puede requerirse 
-  adaptación del sistema.
-
-8. **Proveedor de Carnes de Biblioteca**: La funcionalidad de escaneado de carnets 
-  DEPENDE de que el proveedor de carnets imprima códigos de barras legibles según 
-  el estándar Code 39 o similar.
-
-9. **Equipo de Desarrollo**: El cronograma del proyecto DEPENDE de la disponibilidad 
-  continua del equipo de desarrollo asignado. Cambios en el equipo podrían afectar 
-  plazos de entrega.
-
-10. **Aprobaciones de la Municipalidad**: Ciertas decisiones de diseño y configuración 
-  DEPENDEN de aprobaciones del departamento de sistemas de la municipalidad, lo 
-  que podría introducir retrasos si las aprobaciones se demoran.
-
-**Impacto de Cambios:**
-
-Si cualquiera de las suposiciones anteriores resulta incorrecta o las dependencias 
-externas fallan, se requerirá:
-- Revisión de requisitos afectados
-- Evaluación de impacto en cronograma y presupuesto
-- Posible renegociación de alcance del proyecto
-
-El equipo de proyecto debe monitorear continuamente la validez de estas suposiciones 
-y el estado de las dependencias, reportando cualquier cambio significativo a los 
-stakeholders.
-
-NOTA PARA ESTUDIANTES:
-En proyectos reales, este análisis es crítico para la gestión de riesgos. Una 
-suposición incorrecta puede hacer que todo un proyecto fracase. Sea honesto y 
-exhaustivo al documentar suposiciones y dependencias.
--->
-
-[Complete esta subsección documentando todas las suposiciones y dependencias de su proyecto]
+- Conectividad: Se asume que el laboratorio contara con conexión a internet   
+- Mantenimiento: Se asume que el administrador del laboratorio proporcionara un soporte técnico continuo  
+- Personal: Se asume que el personal deberá contar con el conocimiento mínimo/básico de informática y el manejo de dispositivos de escaneo 
+- Tecnología: Se entiende que el hardware como computadores, impresoras y escáneres sean compatibles con los requisitos técnicos como el navegador web, puertos etc.
+                                    
+### 2.5.1Dependencias 
+- Proveedor de Hosting: El sistema depende de la infraestructura del servidor, actualizaciones o problemas con el equipo 
+- Estudiante: El sistema depende del acceso de la base de datos o API para ver el estado del estudiante (activo/inactivo)
+- Escaner: El sistema depende de los dispositivos de códigos de barras para la entrega y compra de los equipos 
 
 <br>
 
 ### 2.6 Requisitos futuros
 
-<!-- 
-OBJETIVO DE ESTA SUBSECCIÓN:
-Documentar funcionalidades y mejoras que NO estarán en la versión actual del 
-sistema, pero que se han identificado como valiosas para futuras versiones.
+Los siguientes requisitos han sido identificados como deseables o críticos para la evolución del Sistema TECLAB, pero han sido excluidos del alcance del Producto Mínimo Viable (MVP v1.0) por limitaciones de tiempo y presupuesto (4.5 meses). Estos servirán como hoja de ruta para las Versiones 2.0 y posteriores.
 
-IMPORTANCIA:
-- Gestiona expectativas de stakeholders (deja claro qué NO estará en esta versión)
-- Proporciona una hoja de ruta de evolución del producto
-- Ayuda en la planificación arquitectónica (diseñar pensando en extensibilidad)
-- Documenta ideas valiosas que surgieron pero están fuera del alcance actual
+Versión 2.0 (Post-MVP):
 
-CATEGORÍAS SUGERIDAS:
-1. Funcionalidades nuevas
-2. Integraciones adicionales
-3. Mejoras de rendimiento
-4. Mejoras de usabilidad
-5. Soporte de nuevas plataformas
+Integración con Sistemas de Pago para Multas: Implementar la integración con pasarelas de pago (online/TPV) para que los estudiantes puedan pagar multas generadas por retrasos o pérdidas de equipos directamente a través del portal.
 
-FORMATO:
-Liste de manera concisa. NO desarrolle requisitos completos aquí.
+Sistema de Notificaciones Avanzadas: Migrar de simples notificaciones por correo a notificaciones push para reservas y alertas de devoluciones a través de una aplicación móvil o integración con el portal del estudiante de la UTA.
 
-PRINCIPIO IMPORTANTE:
-Estos requisitos fueron deliberadamente EXCLUIDOS del alcance actual por razones
-de tiempo, presupuesto, o prioridad. NO son errores ni omisiones.
+Módulo de Trazabilidad GPS: Incluir un módulo para registrar la ubicación GPS (a través de check-in manual o tecnología IoT futura) de los equipos de alto valor (ej. portátiles, cámaras) al momento del préstamo/devolución para mayor seguridad.
 
-EJEMPLO ACADÉMICO:
+Generación de Reportes Predictivos: Desarrollar informes avanzados que utilicen datos históricos para predecir la demanda de laboratorios o equipos en diferentes épocas del semestre, ayudando a la DTI a planificar adquisiciones.
 
-**Funcionalidades Futuras Planificadas:**
+Reconocimiento Facial/Biométrico para Acceso a Laboratorios: Integrar el sistema con tecnología biométrica para automatizar el registro de entrada y salida a los laboratorios de cómputo, mejorando el control de acceso.
 
-**Versión 2.0 (Estimada para 12 meses después del lanzamiento):**
+Consideración Arquitectónica:
 
-1. **Aplicación Móvil Nativa**: Desarrollo de aplicaciones nativas para iOS y 
-  Android que permitan a los usuarios acceder al catálogo, renovar préstamos, 
-  y recibir notificaciones push.
-
-2. **Sistema de Recomendaciones**: Implementar un sistema de recomendaciones 
-  inteligente que sugiera materiales basándose en el historial de préstamos 
-  y preferencias del usuario (similar a Amazon o Netflix).
-
-3. **Biblioteca Digital**: Incorporar módulo para gestión y préstamo de libros 
-  electrónicos (e-books) y audiolibros, con integración de DRM (Digital Rights 
-  Management).
-
-4. **Sistema de Comentarios y Reseñas**: Permitir a los usuarios calificar 
-  materiales y escribir reseñas, creando una comunidad alrededor de la biblioteca.
-
-5. **Integración con Redes Sociales**: Permitir a usuarios compartir sus lecturas 
-  y listas de deseos en redes sociales (Facebook, Twitter, Instagram).
-
-**Versión 2.5 (Estimada para 18 meses):**
-
-6. **Préstamo Interbibliotecario**: Integración con otras bibliotecas municipales 
-  para permitir préstamos de materiales entre bibliotecas de la red.
-
-7. **Sistema de Eventos**: Módulo para gestión y difusión de eventos de la 
-  biblioteca (clubs de lectura, presentaciones de libros, talleres).
-
-8. **Analítica Avanzada**: Dashboard ejecutivo con análisis predictivo de demanda, 
-  recomendaciones de adquisiciones basadas en IA, y análisis de tendencias.
-
-9. **Portal del Autor**: Permitir a autores locales publicar información sobre 
-  sus obras, calendario de presentaciones, y conectar con lectores.
-
-10. **Accesibilidad Mejorada**: Soporte completo para lectores de pantalla, modo 
-  alto contraste, tamaños de fuente ajustables, y soporte para materiales en 
-  Braille.
-
-**Integraciones Futuras:**
-
-11. **Sistema de Pago en Línea**: Integración con pasarelas de pago (PayPal, 
-  tarjetas de crédito) para pago de multas y cuotas de membresía en línea.
-
-12. **API Pública**: Exposición de API REST pública (con autenticación) para que 
-  desarrolladores externos puedan crear aplicaciones que consuman datos de la 
-  biblioteca.
-
-13. **Integración con Servicios Editoriales**: Conexión con bases de datos de 
-  editoriales para obtener automáticamente metadatos, portadas, y reseñas de 
-  nuevos libros.
-
-**Mejoras Tecnológicas Consideradas:**
-
-14. **Modo Offline**: Permitir operaciones básicas de préstamo/devolución en modo 
-  offline cuando no hay conexión a Internet, con sincronización automática 
-  posterior.
-
-15. **Reconocimiento por Voz**: Búsqueda de materiales mediante comandos de voz 
-  (integración con Alexa, Google Assistant).
-
-16. **Chatbot de Atención**: Asistente virtual con IA que responda preguntas 
-  frecuentes de usuarios 24/7.
-
-17. **Realidad Aumentada**: Aplicación AR que ayude a usuarios a localizar 
-  físicamente materiales en los estantes de la biblioteca.
-
-**Nota Importante:**
-Estos requisitos futuros son tentativos y están sujetos a disponibilidad de 
-presupuesto, cambios en prioridades del negocio, y evolución tecnológica. No 
-constituyen compromisos contractuales.
-
-CONSIDERACIÓN ARQUITECTÓNICA:
-Aunque estas funcionalidades no se implementarán en la versión 1.0, la arquitectura 
-del sistema debe diseñarse de manera que permita su incorporación futura sin 
-requerir rediseños mayores. Esto implica:
-- Diseño modular
-- API bien definidas entre componentes
-- Base de datos extensible
-- Separación clara de responsabilidades
-
-PROCESO DE PRIORIZACIÓN:
-Los requisitos futuros serán revisados y priorizados en cada ciclo de planificación, 
-basándose en:
-- Feedback de usuarios reales después del lanzamiento
-- Cambios en el contexto de negocio
-- Disponibilidad de recursos
-- ROI (Retorno de Inversión) estimado
-- Dependencias técnicas
--->
+Aunque estas funcionalidades no se implementarán en la versión 1.0, la arquitectura del sistema se diseñará de manera modular para permitir su incorporación futura sin requerir rediseños mayores, especialmente en lo referente a la Gestión de Faltas y Sanciones para la futura integración con pagos.
 
 [Complete esta subsección con los requisitos futuros identificados para su proyecto]
 
@@ -1272,221 +646,21 @@ Use una tabla como la siguiente para cada requisito funcional:
 | **Comentarios** | [Cualquier información adicional relevante] |
 
 
+#### 3.1.1 Módulo de Generación de reportes
 
-<!-- 
-EXPLICACIÓN DE CADA CAMPO:
-
-- **ID**: Identificador único (RF-001, RF-002, etc.). Use números secuenciales.
-  CRÍTICO para trazabilidad.
-
-- **Nombre**: Título breve que identifique el requisito (max 8-10 palabras)
-
-- **Descripción**: La especificación completa del requisito. DEBE ser:
-  - Clara: Lenguaje preciso, sin términos vagos
-  - Completa: Incluir toda la información necesaria
-  - Verificable: Debe poder probarse
-  - Consistente: No contradecir otros requisitos
-  
-  Template para descripciones:
-  "El sistema DEBE [acción] [entidad/datos] [bajo qué condiciones] 
-  [con qué restricciones/validaciones]"
-
-- **Prioridad**:
-  - Esencial: El sistema no puede funcionar sin esto. DEBE estar en v1.0
-  - Deseable: Importante pero el sistema puede funcionar sin ello temporalmente
-  - Opcional: Nice to have, puede postergarse a versiones futuras
-
-- **Estabilidad**: Qué tan probable es que este requisito cambie:
-  - Alta: Requisito bien entendido, poco probable que cambie
-  - Media: Puede requerir refinamiento
-  - Baja: Requisito exploratorio, probablemente cambiará
-
-- **Fuente**: Quién solicitó este requisito (cliente, usuario, regulación, etc.)
-
-- **Criterios de Aceptación**: Condiciones específicas, medibles y verificables 
-  que deben cumplirse para que el requisito se considere implementado correctamente.
-  Estos serán la base de los casos de prueba.
-
-- **Dependencias**: Otros requisitos que deben implementarse antes o junto con 
-  este requisito.
-
-- **Comentarios**: Cualquier aclaración adicional, nota técnica, o contexto
-
-ORGANIZACIÓN DE REQUISITOS FUNCIONALES:
-
-Agrupe los requisitos por módulos funcionales del sistema. Por ejemplo:
-
-3.1.1 Módulo de Autenticación y Autorización
-3.1.2 Módulo de Gestión de Usuarios
-3.1.3 Módulo de Gestión de Catálogo
-3.1.4 Módulo de Préstamos y Devoluciones
-3.1.5 Módulo de Reportes
-... etc
-
-Dentro de cada módulo, liste todos los requisitos funcionales relacionados.
-
-EJEMPLOS ACADÉMICOS COMPLETOS:
--->
-
-#### 3.1.1 Módulo de Autenticación y Seguridad
-
-<!-- 
-Este módulo incluye todos los requisitos relacionados con login, logout, gestión
-de sesiones, permisos, y seguridad de acceso al sistema.
--->
-
-| Id                       | RF-UC- 34                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ID | RF-UC- 34|
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Nombre                   | Sacar estadisticas del laboratorio                                                                                                                                                                                                                                                                                                                                                                             |
-| Descripción              |Proceso mediante el cual el usuario accede y obtiene un resumen analítico de los datos registrados en el laboratorio, permitiendo la interpretación y evaluación de la información obtenida, así como la identificación de patrones, tendencias o resultados relevantes que faciliten la toma de decisiones y el seguimiento de los experimentos realizados.                                                                                                                                                                                                                                                                                    |
-| Prioridad                | Deseable                                                                                                                                                                                                                                                                                                                                                                                                       |
-| Estabilidad              | Media                                                                                                                                                                                                                                                                                                                                                                                                          |
-| Fuente                   | Docente responsable del laboratorio                                                                                                                                                                                                                                                                                                                                                                            |
+| Nombre | Sacar estadisticas del laboratorio|
+| Descripción| Proceso mediante el cual el usuario accede y obtiene un resumen analítico de los datos registrados en el laboratorio, permitiendo la interpretación y evaluación de la información obtenida, así como la identificación de patrones, tendencias o resultados relevantes que faciliten la toma de decisiones y el seguimiento de los experimentos realizados.|
+| Prioridad| Deseable|
+| Estabilidad| Media |
+| Fuente| Docente responsable del laboratorio|
 | Criterios de  aceptación | 1.El sistema debe permitir  al usuario poder seleccionar un rango de fechas , equipo prestado o grupo de trabajo para generar las estadisticas 2.Los datos deben ser concisos y precisos ,coincidiendo con la información previamente registrada en la base de datos del laboratorio  3.El acceso de la funcionalidad debe estar únicamente a usuarios autorizados  por ejemplo (docentes o administrativos)   |
-| Dependencias             | Modulo de generación de reportes de uso de laboratorio (uc-16 )                                                                                                                                                                                                                                                                                                                                                |
-| Comentarios              | Se recomienda incluir gráficos estadísticos (barras o pastel)para una visualización mas clara  de los datos                                                                                                                                                                                                                                                                                                    |
-
-| **ID** | RF-001 |
-|--------|--------|
-| **Nombre** | Autenticación de usuarios del sistema |
-| **Descripción** | El sistema DEBE proporcionar una interfaz de login que permita a usuarios autorizados (bibliotecarios y administradores) autenticarse mediante credenciales únicas. El sistema DEBE validar nombre de usuario y contraseña contra la base de datos de usuarios del sistema. Si las credenciales son correctas, el sistema DEBE crear una sesión autenticada y redirigir al usuario al panel principal. Si las credenciales son incorrectas, el sistema DEBE mostrar un mensaje de error genérico ("Usuario o contraseña incorrectos") sin especificar cuál de los dos es incorrecto (por seguridad). |
-| **Prioridad** | Esencial |
-| **Estabilidad** | Alta |
-| **Fuente** | Requerimiento de seguridad estándar |
-| **Criterios de Aceptación** | 1. Un usuario con credenciales válidas puede acceder al sistema<br>2. Un usuario con credenciales inválidas NO puede acceder y ve mensaje de error<br>3. El mensaje de error no revela si el usuario existe o la contraseña es incorrecta<br>4. La contraseña se transmite de forma encriptada (HTTPS)<br>5. La contraseña se almacena hasheada en la base de datos (bcrypt o similar) |
-| **Dependencias** | Ninguna |
-| **Comentarios** | Implementar bloqueo temporal de cuenta después de 5 intentos fallidos consecutivos (ver RF-002). Este requisito NO incluye autenticación de usuarios finales (clientes de la biblioteca), solo personal del sistema. |
+| Dependencias| Modulo de generación de reportes de uso de laboratorio (uc-16 )|
+| Comentarios| Se recomienda incluir gráficos estadísticos (barras o pastel)para una visualización mas clara  de los datos|
 <br>
 
-| **ID** | RF-002 |
-|--------|--------|
-| **Nombre** | Bloqueo de cuenta por intentos fallidos |
-| **Descripción** | El sistema DEBE bloquear temporalmente una cuenta de usuario después de 5 intentos fallidos de autenticación consecutivos. El bloqueo DEBE durar 30 minutos. Durante el período de bloqueo, el sistema DEBE mostrar el mensaje "Cuenta temporalmente bloqueada por seguridad. Intente nuevamente en X minutos" donde X es el tiempo restante. El sistema DEBE enviar notificación por correo electrónico al usuario informando del bloqueo. Después de 30 minutos, el contador de intentos fallidos DEBE resetearse automáticamente. Un administrador DEBE poder desbloquear manualmente una cuenta antes de que expire el tiempo. |
-| **Prioridad** | Esencial |
-| **Estabilidad** | Alta |
-| **Fuente** | Requerimiento de seguridad - Cliente |
-| **Criterios de Aceptación** | 1. Después de 5 intentos fallidos, el sistema bloquea la cuenta<br>2. Durante el bloqueo, no se permite autenticación incluso con credenciales correctas<br>3. Se muestra mensaje con tiempo restante de bloqueo<br>4. Se envía email de notificación al usuario<br>5. Después de 30 minutos, el bloqueo se levanta automáticamente<br>6. Un administrador puede desbloquear manualmente<br>7. Los intentos fallidos se registran en el log de auditoría |
-| **Dependencias** | RF-001 (Autenticación de usuarios) |
-| **Comentarios** | Los intentos fallidos se cuentan POR cuenta de usuario, no por dirección IP. Esto previene ataques de fuerza bruta pero también protege al usuario legítimo. |
-<br>
 
-| **ID** | RF-003 |
-|--------|--------|
-| **Nombre** | Control de acceso basado en roles (RBAC) |
-| **Descripción** | El sistema DEBE implementar control de acceso basado en roles. DEBEN existir al menos tres roles: Administrador, Bibliotecario, y Asistente. Cada rol DEBE tener permisos específicos para acceder a diferentes módulos y funciones del sistema. Un usuario con rol Administrador DEBE tener acceso completo a todas las funcionalidades. Un usuario con rol Bibliotecario DEBE tener acceso a funciones operativas (préstamos, devoluciones, búsqueda, registro de usuarios) pero NO a configuración del sistema ni reportes gerenciales. Un usuario con rol Asistente DEBE tener acceso solo a funciones de consulta (búsqueda de catálogo y consulta de usuarios) sin permisos de modificación. El sistema DEBE denegar el acceso a funcionalidades no autorizadas mostrando mensaje "No tiene permisos para realizar esta acción". |
-| **Prioridad** | Esencial |
-| **Estabilidad** | Media |
-| **Fuente** | Cliente - Jefe de Biblioteca |
-| **Criterios de Aceptación** | 1. Se pueden definir al menos 3 roles diferentes con permisos distintos<br>2. Los permisos se verifican en cada operación del sistema<br>3. Intentos de acceso no autorizado son bloqueados con mensaje apropiado<br>4. Los permisos de cada rol están claramente documentados<br>5. Los intentos de acceso no autorizado se registran en log de auditoría<br>6. Un administrador puede modificar permisos de roles (requisito futuro - documentar en 2.6) |
-| **Dependencias** | RF-001 (Autenticación de usuarios) |
-| **Comentarios** | La asignación de rol a un usuario se realiza durante la creación de la cuenta por un Administrador. Un usuario solo puede tener un rol a la vez en esta versión. Versiones futuras podrían permitir roles múltiples. |
-<br>
-
-#### 3.1.2 Módulo de Gestión de Usuarios (Clientes de la Biblioteca)
-
-<!-- 
-Este módulo gestiona los usuarios FINALES de la biblioteca (no el personal).
-Incluye registro, actualización, consulta, suspensión de usuarios.
--->
-
-| **ID** | RF-010 |
-|--------|--------|
-| **Nombre** | Registro de nuevo usuario de biblioteca |
-| **Descripción** | El sistema DEBE permitir a un Bibliotecario o Administrador registrar un nuevo usuario de biblioteca. El sistema DEBE capturar los siguientes datos obligatorios: nombres, apellidos, tipo de documento (Cédula/Pasaporte), número de documento, fecha de nacimiento, dirección, teléfono, correo electrónico, y categoría de usuario (Adulto/Estudiante/Infantil). El sistema DEBE validar que el número de documento sea único en el sistema. El sistema DEBE validar que el correo electrónico tenga formato válido. El sistema DEBE calcular automáticamente la fecha de expiración de la membresía (1 año desde fecha de registro). El sistema DEBE generar automáticamente un número único de carnet de biblioteca. El sistema DEBE permitir capturar opcionalmente: segundo teléfono, y observaciones. Al confirmar el registro, el sistema DEBE mostrar el número de carnet generado y DEBE permitir imprimir una ficha de registro. |
-| **Prioridad** | Esencial |
-| **Estabilidad** | Alta |
-| **Fuente** | Cliente - Bibliotecarios |
-| **Criterios de Aceptación** | 1. Se pueden registrar usuarios con todos los datos obligatorios<br>2. El sistema rechaza registro con documento duplicado<br>3. El sistema valida formato de email<br>4. El sistema genera número de carnet único y consecutivo<br>5. La fecha de expiración se calcula correctamente (fecha actual + 1 año)<br>6. Se puede imprimir ficha de registro con código de barras del carnet<br>7. El número de carnet comienza con prefijo configurable (ej: "BMUN-")|
-| **Dependencias** | RF-003 (Control de acceso - solo Bibliotecario y Admin pueden registrar)<br>RF-011 (Validación con Sistema Municipal - si está disponible) |
-| **Comentarios** | La categoría de usuario determina las políticas de préstamo aplicables (cantidad de materiales, días de préstamo). Ver RF-030 para políticas de préstamo. Si existe integración con Sistema Municipal de Identificación, se debe validar que el documento es válido (ver RF-011). |
-<br>
-
-| **ID** | RF-011 |
-|--------|--------|
-| **Nombre** | Validación de identidad con Sistema Municipal |
-| **Descripción** | El sistema DEBE integrarse con la API del Sistema de Identificación Municipal (SMI) para validar la identidad del ciudadano durante el registro. Cuando el usuario ingresa tipo y número de documento, el sistema DEBE consultar la API del SMI. Si el documento es válido, el sistema DEBE auto-completar nombres, apellidos, y fecha de nacimiento con los datos oficiales del SMI. Si el documento no es válido o no se encuentra en el SMI, el sistema DEBE mostrar una advertencia pero DEBE permitir continuar con el registro manual (el bibliotecario puede verificar físicamente el documento). Si la API del SMI no está disponible (timeout, error de conexión), el sistema DEBE permitir registro manual mostrando un mensaje: "No se pudo verificar con Sistema Municipal. Proceda con verificación manual del documento." |
-| **Prioridad** | Deseable |
-| **Estabilidad** | Media |
-| **Fuente** | Requerimiento de integración - Municipalidad |
-| **Criterios de Aceptación** | 1. El sistema consulta la API del SMI al ingresar documento<br>2. Si el documento es válido, se auto-completan datos<br>3. Si el documento es inválido, se muestra advertencia pero se permite continuar<br>4. Si la API no responde en 5 segundos (timeout), se permite registro manual<br>5. Todos los intentos de validación se registran en log del sistema<br>6. Los datos auto-completados son editables por el bibliotecario |
-| **Dependencias** | RF-010 (Registro de usuario)<br>Disponibilidad de API del Sistema Municipal de Identificación v2.1 |
-| **Comentarios** | Este requisito es DESEABLE, no ESENCIAL, porque el sistema debe poder funcionar aunque la integración con SMI no esté disponible. La API del SMI es un sistema externo fuera del control del proyecto. Documentar timeout y manejo de errores claramente. |
-<br>
-
-**[Continúe con más requisitos funcionales del Módulo de Gestión de Usuarios: actualización de datos, consulta de usuarios, suspensión de usuarios, renovación de membresía, etc.]**
-
-#### 3.1.3 Módulo de Gestión de Catálogo
-
-<!-- Continúe documentando requisitos para este módulo -->
-
-#### 3.1.4 Módulo de Préstamos y Devoluciones
-
-<!-- Continúe documentando requisitos para este módulo -->
-
-#### 3.1.5 Módulo de Reservas
-
-<!-- Continúe documentando requisitos para este módulo -->
-
-#### 3.1.6 Módulo de Multas y Pagos
-
-<!-- Continúe documentando requisitos para este módulo -->
-
-#### 3.1.7 Módulo de Notificaciones
-
-<!-- Continúe documentando requisitos para este módulo -->
-
-#### 3.1.8 Módulo de Reportes y Estadísticas
-
-<!-- Continúe documentando requisitos para este módulo -->
-
-#### 3.1.9 Módulo de Administración del Sistema
-
-<!-- Continúe documentando requisitos para este módulo -->
-
-#### 3.1.10 Módulo de Auditoría y Logs
-
-<!-- Continúe documentando requisitos para este módulo -->
-
-<!-- 
-CHECKLIST DE CALIDAD PARA REQUISITOS FUNCIONALES:
-
-Antes de dar por terminado un requisito funcional, verifique:
-
-☐ Tiene un ID único y secuencial
-☐ Tiene un nombre descriptivo
-☐ La descripción es clara y sin ambigüedades
-☐ Usa las palabras clave correctamente (DEBE/DEBERÍA/PUEDE)
-☐ Es verificable (se puede probar)
-☐ Tiene prioridad asignada
-☐ Tiene criterios de aceptación medibles
-☐ Las dependencias están identificadas
-☐ No contradice otros requisitos
-☐ No especifica soluciones técnicas innecesariamente (a menos que sea una restricción)
-☐ Es atómico (no combina múltiples funcionalidades que deberían ser requisitos separados)
-
-CANTIDAD DE REQUISITOS:
-
-NO hay un número "correcto" de requisitos. Depende de la complejidad del sistema.
-Como referencia:
-- Sistema pequeño: 30-60 requisitos funcionales
-- Sistema mediano: 60-150 requisitos funcionales
-- Sistema grande: 150+ requisitos funcionales
-
-Un sistema como BiblioTech (biblioteca mediana) típicamente tendría 80-120 
-requisitos funcionales bien especificados.
-
-IMPORTANTE PARA ESTUDIANTES:
-
-En proyectos académicos, es mejor tener MENOS requisitos pero MUY BIEN ESPECIFICADOS
-que muchos requisitos vagos o incompletos. La calidad supera a la cantidad.
-
-Si su proyecto es académico y tiene límites de tiempo, enfóquese en:
-1. Especificar completamente los módulos principales (2-3 módulos)
-2. Para módulos secundarios, puede listar requisitos de forma más resumida
-3. Demuestre que entiende CÓMO escribir requisitos de calidad
--->
-
----
 
 ### 3.2 Requisitos de interfaz externa
 
@@ -2684,8 +1858,7 @@ proporcionando contexto y flujos de trabajo.
 
 **Lista de Casos de Uso del Sistema:**
 
-- **CU-001**: Realizar Préstamo de Material (documentado arriba)
-- 
+- **CU-001**: Solicitar Préstamo de equipo
 - **CU-002**: Realizar Devolución de Material
 - **CU-003**: Registrar Nuevo Usuario
 - **CU-004**: Buscar Material en Catálogo
@@ -2696,116 +1869,66 @@ proporcionando contexto y flujos de trabajo.
 - **CU-009**: Configurar Parámetros del Sistema
 - **CU-010**: Realizar Respaldo de Datos
 - ... [continuar según necesidad]
+
 <br>
 
-<!--
-ESTRUCTURA DE UN CASO DE USO:
+# **CU-01: Solicitar Préstamo de Equipo**
+ 
+| **Campo** | **Descripción** |
+| ---------- | --------------- |
+| **ID** | CU-01 |
+| **Nombre** | Solicitar Préstamo de Equipo |
+| **Actores** | Usuario del laboratorio (actor primario), Sistema de Gestión del Laboratorio (actor secundario) |
+| **Descripción** | Este caso de uso permite al usuario solicitar el préstamo de un equipo del laboratorio. El sistema verifica la disponibilidad del equipo y notifica al usuario si la reserva ha sido exitosa o si el equipo no está disponible. |
+| **Precondiciones** | 1. El usuario ha iniciado sesión en el sistema.<br>2. El usuario está registrado y autorizado para realizar préstamos.<br>3. El sistema tiene inventario de equipos actualizado. |
+| **Postcondiciones** | 1. Si el préstamo fue exitoso, el equipo queda reservado para el usuario.<br>2. Si el equipo no está disponible, el sistema notifica al usuario y no se realiza la reserva. |
+| **Flujo Principal** | 1. El usuario accede al módulo “Préstamo de Equipos”.<br>2. El usuario selecciona el equipo que desea solicitar.<br>3. El sistema **verifica la disponibilidad del equipo** (<<include>> CU-01.1).<br>4. Si el equipo está disponible:<br> 4.1. El sistema registra la solicitud y marca el equipo como reservado.<br> 4.2. El sistema **notifica al usuario que la reserva fue exitosa** (<<extend>>).<br> 4.3. Fin del caso de uso.<br>5. Si el equipo **no está disponible**, el sistema **notifica al usuario la no disponibilidad del equipo** (<<extend>>).<br>6. Fin del caso de uso. |
+| **Flujos Alternativos** | **5a. Equipo no disponible:**<br> 5a1. El sistema muestra mensaje “El equipo solicitado no se encuentra disponible en este momento”.<br> 5a2. El sistema puede sugerir equipos similares o permitir que el usuario programe una reserva futura.<br> 5a3. Fin del flujo alternativo. |
+| **Flujos de Excepción** | **3a. Error en la verificación de disponibilidad:**<br> 3a1. Si ocurre un fallo en la comunicación con la base de datos o el sistema de inventario, se muestra el mensaje “Error al verificar la disponibilidad, intente más tarde”.<br> 3a2. Se registra el error en el log del sistema.<br> 3a3. El flujo termina sin crear la solicitud de préstamo. |
+| **Requisitos Relacionados** | RF-001 (Gestión de préstamos)<br>RF-002 (Verificación de disponibilidad de equipo)<br>RF-003 (Notificación al usuario)<br>RNF-001 (Disponibilidad del sistema 99%)<br>RNF-002 (Tiempo máximo de respuesta 2 segundos) |
+ 
+---
+ 
+## **Subcaso de Uso Incluido**
+ 
+| **Campo** | **Descripción** |
+| ---------- | --------------- |
+| **ID** | CU-01.1 |
+| **Nombre** | Verificar Disponibilidad en el Sistema |
+| **Tipo** | Subcaso de uso (<<include>>) |
+| **Usado por** | CU-01: Solicitar Préstamo de Equipo |
+| **Descripción** | Este subcaso valida si el equipo solicitado está disponible en el inventario del laboratorio antes de procesar el préstamo. |
+| **Entradas** | Identificador del equipo solicitado. |
+| **Salidas** | Estado de disponibilidad (Disponible / No disponible). |
+| **Flujo Principal** | 1. El sistema recibe el ID del equipo solicitado.<br>2. Consulta el inventario del laboratorio.<br>3. Si el equipo está marcado como “Disponible”: devuelve estado = Disponible.<br>4. Si el equipo está marcado como “Prestado” o “En mantenimiento”: devuelve estado = No disponible.<br>5. Fin del subcaso. |
+| **Excepciones** | **2a. Error de conexión al inventario:** El sistema notifica error de consulta y no permite continuar el préstamo. |
+ 
+---
+ 
+## **Subcasos Extendidos**
+ 
+### **CU-01.A: Notificar al Usuario Reserva Exitosa**
+ 
+| **Campo** | **Descripción** |
+| ---------- | --------------- |
+| **Tipo** | Subcaso de uso (<<extend>>) |
+| **Descripción** | Envía un mensaje o alerta al usuario indicando que el préstamo del equipo fue procesado correctamente. |
+| **Entradas** | ID del préstamo, datos del usuario. |
+| **Salidas** | Confirmación visual o por correo electrónico. |
+| **Flujo Principal** | 1. El sistema genera mensaje “Reserva exitosa”.<br>2. Muestra detalles del equipo, fecha y hora de retiro.<br>3. Fin del subcaso. |
+ 
+---
+ 
+### **CU-01.B: Notificar al Usuario No Disponibilidad del Equipo**
+ 
+| **Campo** | **Descripción** |
+| ---------- | --------------- |
+| **Tipo** | Subcaso de uso (<<extend>>) |
+| **Descripción** | Informa al usuario que el equipo no puede ser reservado por no estar disponible. |
+| **Entradas** | ID del equipo, estado de disponibilidad. |
+| **Salidas** | Mensaje de no disponibilidad en pantalla o correo electrónico. |
+| **Flujo Principal** | 1. El sistema muestra mensaje “El equipo solicitado no está disponible actualmente”.<br>2. Ofrece opción para seleccionar otro equipo o programar reserva futura.<br>3. Fin del subcaso. |
 
-**Plantilla de Caso de Uso:**
-
-| Campo | Descripción |
-|-------|-------------|
-| **ID** | CU-001 |
-| **Nombre** | [Nombre descriptivo del caso de uso] |
-| **Actores** | [Quién interactúa: Usuario, Bibliotecario, Sistema externo, etc.] |
-| **Descripción** | [Breve descripción del objetivo del caso de uso] |
-| **Precondiciones** | [Estado que debe existir antes de ejecutar el caso de uso] |
-| **Postcondiciones** | [Estado después de ejecutar exitosamente el caso de uso] |
-| **Flujo Principal** | 1. [Paso 1]<br>2. [Paso 2]<br>3. [Paso 3]<br>... |
-| **Flujos Alternativos** | **2a**. Si [condición]:<br>  2a1. [Paso alternativo]<br>  2a2. [Volver al paso X] |
-| **Flujos de Excepción** | **3a**. Si [error]:<br>  3a1. [Manejo del error]<br>  3a2. [Fin del caso de uso o recuperación] |
-| **Requisitos Relacionados** | [RF-XXX, RF-YYY] |
-
-**Ejemplo Completo:**
--->
-
-
-**CU-001: Realizar Préstamo de Material**
-
-| Campo | Descripción |
-|-------|-------------|
-| **ID** | CU-001 |
-| **Nombre** | Realizar Préstamo de Material |
-| **Actores** | Bibliotecario (primario), Usuario de biblioteca (secundario), Sistema de gestión BiblioTech |
-| **Descripción** | Permite al bibliotecario registrar el préstamo de uno o más materiales bibliográficos a un usuario de la biblioteca. |
-| **Precondiciones** | 1. El bibliotecario ha iniciado sesión en el sistema<br>2. El usuario está registrado en el sistema<br>3. El usuario NO está suspendido ni tiene multas vencidas<br>4. Los materiales están disponibles para préstamo |
-| **Postcondiciones** | 1. El préstamo queda registrado en el sistema<br>2. Los materiales cambian a estado "Prestado"<br>3. Se genera comprobante de préstamo<br>4. El usuario recibe notificación por correo (opcional) |
-| **Flujo Principal** | 1. El bibliotecario selecciona la opción "Nuevo Préstamo"<br>2. El sistema solicita identificación del usuario<br>3. El bibliotecario escanea el carnet del usuario o ingresa número de carnet manualmente<br>4. El sistema valida el carnet y muestra información del usuario<br>5. El sistema muestra si el usuario tiene préstamos activos, multas pendientes, o está suspendido<br>6. El bibliotecario escanea código de barras del material a prestar<br>7. El sistema valida que el material está disponible y lo agrega a la lista de préstamos<br>8. El bibliotecario repite paso 6-7 para cada material adicional (hasta el límite permitido)<br>9. El bibliotecario confirma el préstamo<br>10. El sistema calcula fecha de devolución según política de préstamo<br>11. El sistema registra el préstamo en la base de datos<br>12. El sistema muestra resumen del préstamo y opción de imprimir comprobante<br>13. El bibliotecario imprime comprobante y lo entrega al usuario<br>14. Fin del caso de uso |
-| **Flujos Alternativos** | **4a. Usuario no encontrado**:<br>  4a1. El sistema muestra mensaje "Usuario no encontrado"<br>  4a2. El sistema ofrece opción "Registrar nuevo usuario"<br>  4a3. Si el bibliotecario selecciona registrar, ir a CU-010 (Registrar Usuario)<br>  4a4. Si el bibliotecario cancela, volver al paso 2<br><br>**7a. Material no disponible**:<br>  7a1. El sistema muestra mensaje "Material no disponible. Estado: [Prestado/En reparación/Perdido]"<br>  7a2. Si está prestado, el sistema ofrece opción "Crear reserva"<br>  7a3. El sistema NO agrega el material a la lista<br>  7a4. Volver al paso 6<br><br>**8a. Límite de materiales alcanzado**:<br>  8a1. El sistema muestra mensaje "El usuario ha alcanzado el límite de [X] materiales simultáneos"<br>  8a2. El sistema NO permite agregar más materiales<br>  8a3. Continuar al paso 9 |
-| **Flujos de Excepción** | **5a. Usuario suspendido o con multas vencidas**:<br>  5a1. El sistema muestra advertencia "Usuario suspendido" o "Usuario tiene multas vencidas por $[monto]"<br>  5a2. El sistema NO permite continuar con el préstamo<br>  5a3. El sistema ofrece opción "Registrar pago de multa"<br>  5a4. Fin del caso de uso<br><br>**11a. Error al registrar préstamo (error de BD)**:<br>  11a1. El sistema muestra mensaje "Error al procesar préstamo. Intente nuevamente"<br>  11a2. El sistema registra el error en log con detalles técnicos<br>  11a3. NO se registra el préstamo<br>  11a4. NO se cambia el estado de los materiales<br>  11a5. El bibliotecario puede reintentar desde el paso 9 o cancelar<br>  11a6. Fin del caso de uso |
-| **Requisitos Relacionados** | RF-030 (Registro de préstamo)<br>RF-031 (Validación de disponibilidad)<br>RF-032 (Validación de estado de usuario)<br>RF-033 (Generación de comprobante)<br>RNF-004 (Integridad transaccional)<br>RNFR-001 (Tiempo de respuesta) |
-<br>
-
-<!--
-sobre LOS SUBCASOS DE USO:
-
-Un **subcaso de uso** es un caso de uso que:
-1. **NO puede ejecutarse de forma independiente**
-2. **Siempre es invocado por otro caso de uso** (relación <<include>>)
-3. **Representa funcionalidad compartida** por múltiples casos de uso
-4. **Es un fragmento funcional** del sistema, no un proceso completo
-
-Documenta un subcaso de uso cuando:
-1. Es INCLUIDO (<<include>>) por 2+ casos de uso, Y
-2. Tiene complejidad suficiente que merece especificación separada
-
-**Ejemplos:**
-- Validar Credenciales de Usuario (usado en Login, Cambiar Contraseña, Desbloquear Cuenta)
-- Calcular Costo Total con Impuestos (usado en Ver Carrito, Generar Factura, Procesar Pago)
-- Verificar Disponibilidad de Inventario (usado en Agregar a Carrito, Crear Pedido, Reservar)
-
-
-NO documentes un subcaso cuando:
-- Es usado por un solo CU (documéntalo como parte del CU principal)
-- Es trivial (1-2 pasos simples)
-
-**Ejemplos de NO subcasos:**
-- Cerrar Sesión (trivial: 1 paso)
-- Guardar Log (técnico, no lógica de negocio)
-- Actualizar Timestamp (trivial)
-- Formatear Fecha para Mostrar (técnico)
-
-¿CÓMO DOCUMENTAR UN SUBCASO DE USO?
-
-opcion 1: **Plantilla de Subcaso de Uso:**
-
-| **Campo**                   | **Descripción**                                                                                                                      |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| **ID**                      | CU-XXX.Y (donde XXX es el CU padre y Y es el número de subcaso)                                                                      |
-| **Nombre**                  | [Nombre descriptivo del subcaso]                                                                                                     |
-| **Tipo**                    | Subcaso de uso (<> del caso padre)                                                                                                   |
-| **Usado por**               | CU-AAA, CU-BBB, CU-CCC (casos de uso que lo invocan)                                                                                 |
-| **Descripción**             | [Descripción del propósito del subcaso y su relación con el CU padre]                                                                |
-| **Precondiciones**          | [Estado que debe existir antes de ejecutar este subcaso]                                                                             |
-| **Postcondiciones**         | [Estado resultante después de ejecutar este subcaso]                                                                                 |
-| **Entradas**                | [Datos o parámetros que recibe del caso de uso padre]                                                                                |
-| **Salidas**                 | [Datos o resultados que devuelve al caso de uso padre]                                                                               |
-| **Flujo Principal**         | 1. [Paso 1]<br>2. [Paso 2]<br>3. [Paso 3]<br>...                                                                                     |
-| **Flujos Alternativos**     | **2a**. Si [condición]:<br>  2a1. [Paso alternativo]<br>  2a2. [Retornar al paso X del flujo principal]                              |
-| **Excepciones**             | **3a**. Si [error o evento inesperado]:<br>  3a1. [Acción de manejo o notificación]<br>  3a2. [Fin del subcaso o retorno controlado] |
-| **Reglas de Negocio**       | [RB-XXX, RB-YYY, u otras reglas que aplican]                                                                                         |
-| **Requisitos Relacionados** | [RF-XXX, RF-YYY]                                                                                                                     |
-<br>
--->
-
-| **Campo**                                | **Descripción**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **ID**                                   | **CU-VAL-001**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| **Nombre**                               | Validar Credenciales de Usuario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Tipo**                                 | Subcaso de uso (<<include>>)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| **Usado por**                            | • CU-001: Login al Sistema<br>• CU-025: Cambiar Contraseña<br>• CU-030: Desbloquear Cuenta<br>• CU-045: Autorizar Operación Crítica                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| **Descripción**                          | Valida que las credenciales proporcionadas (usuario + contraseña) son correctas y que la cuenta está en condiciones de ser utilizada. Verifica contra la base de datos de usuarios, valida el hash de la contraseña y comprueba el estado de la cuenta. Este subcaso encapsula toda la lógica de autenticación para garantizar consistencia en todo el sistema.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Precondiciones**                       | 1. El sistema está conectado a la base de datos de usuarios.<br>2. Los datos de entrada (usuario y contraseña) no son nulos ni vacíos.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| **Postcondiciones (Éxito)**              | 1. Las credenciales son válidas.<br>2. Se registra intento exitoso en log de auditoría.<br>3. Se actualiza fecha/hora de último acceso del usuario.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| **Postcondiciones (Fallo)**              | 1. Las credenciales NO son válidas (usuario no existe o contraseña incorrecta).<br>2. Se registra intento fallido en log de auditoría.<br>3. Se incrementa contador de intentos fallidos.<br>4. Si contador alcanza 5 → Se bloquea cuenta temporalmente (30 min).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| **Entradas**                             | **nombre_usuario** *(String)*: Nombre de usuario o email (**Obligatorio**).<br>**contraseña** *(String)*: Contraseña en texto plano (**Obligatorio**).<br>**ip_origen** *(String)*: Dirección IP del cliente (Opcional, para auditoría).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| **Salidas**                              | **resultado** *(Boolean)*: TRUE si credenciales válidas, FALSE si inválidas.<br>**motivo_fallo** *(String)*: Si resultado=FALSE → “usuario_no_existe” / “contraseña_incorrecta” / “cuenta_bloqueada”.<br>**usuario_id** *(Integer)*: Si resultado=TRUE → ID del usuario autenticado.<br>**datos_usuario** *(Object)*: Si resultado=TRUE → Objeto con nombre, rol y permisos.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| **Flujo Principal**                      | 1. Recibir parámetros de entrada (nombre_usuario, contraseña, ip_origen).<br>2. Buscar usuario en base de datos por nombre_usuario.<br>3. Si usuario no encontrado → Ir a Excepción 3a.<br>4. Verificar hash de contraseña:<br> • Obtener hash almacenado y salt.<br> • Calcular hash de contraseña proporcionada.<br> • Comparar hashes.<br>5. Si hashes no coinciden → Ir a Excepción 5a.<br>6. Verificar estado de cuenta:<br> • estado = “activo”<br> • intentos_fallidos < 5<br> • bloqueo_hasta IS NULL o < AHORA().<br>7. Si cuenta bloqueada o inactiva → Ir a Excepción 7a.<br>8. **Credenciales válidas:** Resetear intentos_fallidos = 0; actualizar fecha e IP último acceso.<br>9. Registrar en log de auditoría (“login_exitoso”).<br>10. Retornar resultado=TRUE, usuario_id, datos_usuario.<br>11. **Fin del Subcaso – Éxito.** |
-| **Flujos Alternativos**                  | **Ninguno** (todos los caminos no exitosos se manejan como excepciones).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| **Flujos de Excepción**                  | **3a – Usuario no encontrado:**<br>1. Registrar en log “intento_login_usuario_inexistente”.<br>2. No revelar si el usuario existe o no (seguridad).<br>3. Retornar resultado=FALSE, motivo_fallo="credenciales_invalidas".<br>4. **Fin – Fallo.**<br><br>**5a – Contraseña incorrecta:**<br>1. Incrementar intentos_fallidos.<br>2. Si >=5, bloquear cuenta 30 min y notificar por email.<br>3. Registrar en log “intento_login_contraseña_incorrecta”.<br>4. Retornar resultado=FALSE, motivo_fallo="credenciales_invalidas".<br>5. **Fin – Fallo.**<br><br>**7a – Cuenta bloqueada o inactiva:**<br>1. Determinar motivo: “cuenta_inactiva”, “bloqueada_temporalmente” o “bloqueada_por_seguridad”.<br>2. Registrar en log.<br>3. Retornar resultado=FALSE, motivo_fallo=[motivo].<br>4. **Fin – Fallo.**                                     |
-| **Reglas de Negocio**                    | **RN-SEC-001:** Las contraseñas NUNCA se almacenan en texto plano (usar bcrypt cost=12).<br>**RN-SEC-002:** Después de 5 intentos fallidos, la cuenta se bloquea por 30 minutos.<br>**RN-SEC-003:** Los mensajes de error no deben revelar si el usuario existe o no.<br>**RN-SEC-004:** Todos los intentos (éxito/fallo) se registran en log de auditoría.<br>**RN-SEC-005:** El bloqueo temporal se resetea automáticamente después de 30 min.                                                                                                                                                                                                                                                                                                                                                                                                |
-| **Requisitos No Funcionales Aplicables** | **RNFS-001:** Almacenamiento seguro de contraseñas (bcrypt).<br>**RNFS-002:** Protección contra fuerza bruta (bloqueo tras 5 intentos).<br>**RNFR-001:** Tiempo de respuesta < 500 ms.<br>**RNFS-006:** Auditoría de seguridad (registro completo de intentos).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Casos de Prueba del Subcaso**          | **TC-VAL-001:** Credenciales válidas → resultado=TRUE, usuario_id retornado.<br>**TC-VAL-002:** Usuario no existe → resultado=FALSE, motivo="credenciales_invalidas".<br>**TC-VAL-003:** Contraseña incorrecta → resultado=FALSE, intentos_fallidos++.<br>**TC-VAL-004:** 5to intento fallido → cuenta bloqueada 30 min.<br>**TC-VAL-005:** Cuenta inactiva → resultado=FALSE, motivo="cuenta_inactiva".<br>**TC-VAL-006:** Login durante bloqueo → resultado=FALSE, motivo="cuenta_bloqueada".                                                                                                                                                                                                                                                                                                                                                 |
 
 <!-- 
 Opción 2: Plantilla para Subcasos Simples
@@ -2940,16 +2063,9 @@ Flujo Alternativo 1b: Login con Facebook
 
 **Diagrama de Casos de Uso:**
 
-[Incluya aquí un diagrama UML de casos de uso mostrando actores y casos de uso principales con sus relaciones (include, extend). Puede crearlo con herramientas como draw.io, Lucidchart, PlantUML, o incluso a mano]
+Diagrama de caso de uso para la solicitud y prestamo de equipo.
 
-[![](https://img.plantuml.biz/plantuml/svg/XLRDRXit4BxlKqpbGoNLSlNdfZ5i8vOi9G7iE92iNA8W62qfYGv5RhXSftLH8ASyG1-Xjvxx27cJF4c7vEvg_LC75cmjvnlEp3VVpFfPQj7OR2EZ7nXV2iNXxENp5vU3iza8TaQzSNTyMbh2ORVpz9TnBqe_29MWmGqa67_05P_QtoK7msEBQYLv1P2bFCQKmnyHm830AwCpnOPQQhEDvcpQC6x2UNvqOep-L3dvCuf-XB4sDsY02GeMYw__Ah0wQLdTMcXhjKl886pu5Jbfiq8bRZ30hhcn8aOP4Pvy8CVxYwpGAegii5J4SDPgjpi7CE4eXGlrsdpzXuZQQ60Spj5o8r3ELVqDDwc_-Tn5GuRGWejR8IyIApRqnB3XKZywEeAJs6h3KwXBP1h4pSTCSCDqmnaZT4Qe3SH22cs9DoDq3J250UoCnwFshzq2CaipPwICvceBzzYPmmw7Ws4HSYfIopVe8vGTWbfn7DmlURokaUU--_7Dea_m7sBgIy_eJsA4YaM24kenLzReLfebH8WseG8e-rrhDWEJpUPStUTohYfa-ho7CmB3pc1mEXeFgl6dsO9kr2beIdI5LB-WXpeb8ZF66yJwgKWJdOhRVRwRpnjAWL4A8uhFGloSnMtuzvs7FFprIYo4UsJ_a_dxRjLrmbT4hxbTSVtIe4enb-t9yELfe-BVg_e_vuexxw7U94OlK5dkuvQtLHpx3v05Eeb9qwvF_3VB5NCqJRaR3f8TWaJgA8bXZNTf6gbhGO5VQIkMHAFFTQuIxN8nXbS3xpkbZPyEomHkgv-dj1o88rYwaML8a9naQBrT2yQuUiVq9zMg49X_UnZGAm6zXm7zi28S3nCkqJ50enPh1PYFdIjs02qZLclREiurTm12aNWmci6Uj-oL1bowWI7AY807hZuyp5LuV0prhJmnzQhaANKiZ0ci7HM02xpIFeaGO6_lkEJae7hRFNltE_RUT-pzE_PRjRXk7Hu6eVXASl5igwYAfMX-URc_kl2UgxUn5mgLx2R6iVUk24Ug8lNeSYs6XYXQNk291xqCLrAdcysnpAveqb7Ih2cqubgd1yqccRvz_XlwU53CBoWDN56RhLVtjoz_-INUQUVGVOAUPv92_ppDqeIhiBOBNBV0FN6uVB3TdIoVUzgM1RRN3bgdtGzCnzc6kfiJoBX5APtEYGTmDKMXCicNsyByXddjrrc_jK_V9sEwjVkuJpVtWIU5G-TnXrxXqEaK7ctu2IQlw5kx_xXll_Jj5hwzYeVaA_VWs-MxD59B_J7ZeJEqN4ai0bVqwgVNSCRT4eJfnTa5hHook-SijXaT2kNRIhp9_9sx5xWz8sx2mizVEa9TwvWwwmv8Z0HPtbS6r4FFT_EUxlfbuGfl0Esribcqb-WZmP9WDM5S-7ZxXjiDOdA8eWoVbgivb1v5p-Yt-wVfFm00)](https://editor.plantuml.com/uml/XLRDRXit4BxlKqpbGoNLSlNdfZ5i8vOi9G7iE92iNA8W62qfYGv5RhXSftLH8ASyG1-Xjvxx27cJF4c7vEvg_LC75cmjvnlEp3VVpFfPQj7OR2EZ7nXV2iNXxENp5vU3iza8TaQzSNTyMbh2ORVpz9TnBqe_29MWmGqa67_05P_QtoK7msEBQYLv1P2bFCQKmnyHm830AwCpnOPQQhEDvcpQC6x2UNvqOep-L3dvCuf-XB4sDsY02GeMYw__Ah0wQLdTMcXhjKl886pu5Jbfiq8bRZ30hhcn8aOP4Pvy8CVxYwpGAegii5J4SDPgjpi7CE4eXGlrsdpzXuZQQ60Spj5o8r3ELVqDDwc_-Tn5GuRGWejR8IyIApRqnB3XKZywEeAJs6h3KwXBP1h4pSTCSCDqmnaZT4Qe3SH22cs9DoDq3J250UoCnwFshzq2CaipPwICvceBzzYPmmw7Ws4HSYfIopVe8vGTWbfn7DmlURokaUU--_7Dea_m7sBgIy_eJsA4YaM24kenLzReLfebH8WseG8e-rrhDWEJpUPStUTohYfa-ho7CmB3pc1mEXeFgl6dsO9kr2beIdI5LB-WXpeb8ZF66yJwgKWJdOhRVRwRpnjAWL4A8uhFGloSnMtuzvs7FFprIYo4UsJ_a_dxRjLrmbT4hxbTSVtIe4enb-t9yELfe-BVg_e_vuexxw7U94OlK5dkuvQtLHpx3v05Eeb9qwvF_3VB5NCqJRaR3f8TWaJgA8bXZNTf6gbhGO5VQIkMHAFFTQuIxN8nXbS3xpkbZPyEomHkgv-dj1o88rYwaML8a9naQBrT2yQuUiVq9zMg49X_UnZGAm6zXm7zi28S3nCkqJ50enPh1PYFdIjs02qZLclREiurTm12aNWmci6Uj-oL1bowWI7AY807hZuyp5LuV0prhJmnzQhaANKiZ0ci7HM02xpIFeaGO6_lkEJae7hRFNltE_RUT-pzE_PRjRXk7Hu6eVXASl5igwYAfMX-URc_kl2UgxUn5mgLx2R6iVUk24Ug8lNeSYs6XYXQNk291xqCLrAdcysnpAveqb7Ih2cqubgd1yqccRvz_XlwU53CBoWDN56RhLVtjoz_-INUQUVGVOAUPv92_ppDqeIhiBOBNBV0FN6uVB3TdIoVUzgM1RRN3bgdtGzCnzc6kfiJoBX5APtEYGTmDKMXCicNsyByXddjrrc_jK_V9sEwjVkuJpVtWIU5G-TnXrxXqEaK7ctu2IQlw5kx_xXll_Jj5hwzYeVaA_VWs-MxD59B_J7ZeJEqN4ai0bVqwgVNSCRT4eJfnTa5hHook-SijXaT2kNRIhp9_9sx5xWz8sx2mizVEa9TwvWwwmv8Z0HPtbS6r4FFT_EUxlfbuGfl0Esribcqb-WZmP9WDM5S-7ZxXjiDOdA8eWoVbgivb1v5p-Yt-wVfFm00)
-
-[Complete con los casos de uso principales de su sistema. No necesita documentar TODOS los casos de uso con el mismo nivel de detalle. Enfóquese en los más críticos o complejos.]
-
-
-
-
-
+![](https://img.plantuml.biz/plantuml/svg/XLJ1JXin4Br7oZzCmm4QDMc1jX888fAGRL4He2QHUeY4Xjr9PF3QY-sbq8eFwg6dVW8_rh6TaAK4LNjPZsVUctdpTW-iG-FANDPhhpAQ2aLmVFJfywXtF1x0sc0xsKeEbrSnkhMvyp7PhjVibL056ioXmFGAPpHqTvB0KEfGpIHLCqfBALg2d_KQG8_JPqQNAkjhgSsICLngav695ujOrnZzlHgwhzVgjNL8jFc11ZB1dAbu-AF0wQBbTEj2EwTzNmOXfqkkGya3O4YgrpYBCs6U5SgTqCg3Ek5uXaE1CsuR8IFeezNMluojteMXbY8LhinyvCmy_681S-qFW-jI53esjh-_3ztKQKFMlzThw0_GA6s9HkW6e8NnCdKeh2DcEpD2fQ906OiUbOJ68cCrgMt0MlB1FrvWhrZ4zQtFEwzWRupxhNURhoC7FAwcqMo6YsPpecoSahKjU0HFDb6CGu4jTjz_jmbhlTxX8EdzIxbG2uvKAakHSM3Zz4AA6R88Gjldr3Tan5IaF9-mXLRYGaYH8MOJHGf8WetZpvdFZqxwBt8ERXsfB99sfIEZq8cRLQHAkq3gpG7ppO3oarQRy8kMJoS_7tmRdP-SikP9ijD__r_GYM8HoTmWqArmsc8Lv_JB4kT-QOcl9DcjMh61KXqq27wAGuoXrUg45QmisDiJNlYCEfsgyBZG8EoktUxCfOJTQiKBY1Ha3O253w8a-tQfxqhikKoxbVBd2Jp_quIdzFwZzWkOol9IW_TYzl3REf7goBSENLlc8kTrNvSK4c1QgbZ8dGlsRU4DGSfHG0eczngs9KrTR6Guwew6aVf4E-JFd43dWYiaWgGx1a3UGrv8kiHeY4lYatu3TnY8bGOifBSmxprR_3wiy2N0uiy4IzRs50SCnZ_Slm00)
 
 ### 4.2 Glosario
 
