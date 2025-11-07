@@ -4,7 +4,7 @@
 
 <br>
 
-<img width="445" height="127" alt="LogoTecLab" src="https://raw.githubusercontent.com/DevCarlos23/ProyectoLaboratorio/main/docs/LogoTecLab.JPG" />
+<img height="127" alt="LogoTecLab" src="https://raw.githubusercontent.com/DevCarlos23/ProyectoLaboratorio/main/docs/LogoTecLab.JPG" />
 
 #### Noviembre 2025
 
@@ -337,7 +337,7 @@ El sistema será implementado como aplicación web, compatible con navegadores m
 
 El sistema de Préstamo de Equipos de Laboratorio es un producto completamente nuevo que reemplazará parcialmente los registros manuales actuales de préstamos y devoluciones de equipos. Actualmente, el control se realiza mediante hojas de cálculo Excel y registros físicos, lo que dificulta el seguimiento del estado de los equipos y el historial de préstamos.
 El sistema funcionará como una aplicación web independiente, pero interactuará con ciertos sistemas externos para mejorar la funcionalidad y seguridad:
-- ódulo de autenticación institucional: Para validar credenciales de los usuarios internos (docentes, técnicos y administradores).
+- Módulo de autenticación institucional: Para validar credenciales de los usuarios internos (docentes, técnicos y administradores).
 - Servidor de correo electrónico institucional: Para notificaciones automáticas de devoluciones y reservas de equipos.
 - Servidor de respaldo centralizado del laboratorio: Para garantizar la integridad y disponibilidad de la información.
 El sistema digitalizará completamente los procesos de préstamo, devolución y consulta de equipos, manteniendo la lógica de negocio actual pero eliminando el manejo de papel y hojas de cálculo.
@@ -557,8 +557,6 @@ El flujo principal permitirá que un usuario autenticado realice reservas o pré
 
 Algunos laboratorios (como Electrónica) operan en red aislada; el sistema debe funcionar sin conexión y sincronizar datos posteriormente.
 
-Los carnets actuales usan código de barras (Code128), pero el sistema debe ser compatible con NFC para futuras migraciones.
-
 2.4.3 Restricciones de Implementación
 
 - El sistema debe desarrollarse con tecnologías open source (sin licencias propietarias).
@@ -668,92 +666,7 @@ Aunque estas funcionalidades no se implementarán en la versión 1.0, la arquite
 
 ## 3 REQUISITOS ESPECÍFICOS
 
-<!-- 
-═══════════════════════════════════════════════════════════════════════════════
-SECCIÓN 3: REQUISITOS ESPECÍFICOS
-═══════════════════════════════════════════════════════════════════════════════
-
-PROPÓSITO DE ESTA SECCIÓN:
-Esta es la sección MÁS IMPORTANTE del documento SRS. Aquí se especifican de manera
-DETALLADA, PRECISA y VERIFICABLE todos los requisitos del sistema.
-
-IMPORTANCIA CRÍTICA:
-- Es la base para el diseño, implementación y pruebas del sistema
-- Debe ser lo suficientemente detallada para que desarrolladores puedan construir 
-  el sistema sin ambigüedades
-- Debe ser lo suficientemente precisa para que testers puedan verificar cada 
-  requisito
-- Sirve como contrato entre cliente y equipo de desarrollo
-
-PRINCIPIOS FUNDAMENTALES PARA REQUISITOS DE CALIDAD:
-
-Un requisito de calidad es:
-
-1. CORRECTO: Refleja una necesidad real del cliente/usuario
-2. NO AMBIGUO: Tiene una sola interpretación posible
-3. COMPLETO: Contiene toda la información necesaria para su implementación
-4. CONSISTENTE: No contradice otros requisitos
-5. CLASIFICADO: Tiene prioridad asignada (esencial/deseable/opcional)
-6. VERIFICABLE: Se puede diseñar una prueba para verificar su cumplimiento
-7. MODIFICABLE: Estructura que permite cambios sin afectar otros requisitos
-8. TRAZABLE: Tiene ID único y se puede seguir a través del ciclo de vida
-
-PALABRAS CLAVE IEEE 830:
-En requisitos, use estas palabras con precisión:
-- DEBE / DEBERÁ (MUST): Requisito obligatorio, esencial
-- DEBERÍA (SHOULD): Requisito deseable, importante pero no crítico
-- PUEDE (MAY): Requisito opcional
-
-ERRORES COMUNES A EVITAR:
-
-✗ Requisitos ambiguos: "El sistema será rápido"
-✓ Requisito correcto: "El sistema responderá a consultas en máximo 3 segundos"
-
-✗ Requisitos sin verificar: "El sistema será fácil de usar"
-✓ Requisito correcto: "El 90% de usuarios podrán completar un préstamo sin ayuda 
-  después de 30 minutos de capacitación"
-
-✗ Requisitos que especifican soluciones: "El sistema usará base de datos MySQL"
-  (a menos que sea una restricción real)
-✓ Requisito correcto: "El sistema almacenará datos de forma persistente y permitirá 
-  consultas concurrentes de al menos 50 usuarios"
-
-✗ Requisitos que combinan múltiples funcionalidades sin separación clara
-
-ORGANIZACIÓN DE ESTA SECCIÓN:
-La Sección 3 puede organizarse de diferentes formas según IEEE 830:
-- Por funcionalidad del sistema
-- Por tipo de usuario
-- Por modo de operación
-- Por objetos del sistema
-
-Esta plantilla usa organización por TIPO DE REQUISITO (funcionales, no funcionales,
-interfaces, etc.) que es la más común en proyectos académicos.
--->
-
 ### 3.1 Requisitos funcionales
-
-<!-- 
-═══════════════════════════════════════════════════════════════════════════════
-REQUISITOS FUNCIONALES
-═══════════════════════════════════════════════════════════════════════════════
-
-DEFINICIÓN:
-Los requisitos funcionales describen QUÉ debe HACER el sistema. Son las funciones,
-servicios, o comportamientos que el sistema debe proporcionar.
-
-DIFERENCIA CON CASOS DE USO:
-- REQUISITO FUNCIONAL: "El sistema debe validar las credenciales del usuario"
-- CASO DE USO: Describe el flujo completo de interacción (incluyendo flujos 
-  alternativos, excepciones, pre y post condiciones)
-
-Los casos de uso PUEDEN incluirse en los Apéndices (4.1), pero aquí se documentan
-los requisitos funcionales de forma atómica.
-
-FORMATO ESTÁNDAR PARA CADA REQUISITO:
-
-Use una tabla como la siguiente para cada requisito funcional:
--->
 
 **PLANTILLA DE REQUISITO FUNCIONAL:**
 
@@ -771,19 +684,96 @@ Use una tabla como la siguiente para cada requisito funcional:
 
 #### 3.1.1 Módulo de Generación de reportes
 
-| ID | RF-UC- 34|
+#### **RF-UC-01 – Visualizar estadisticas del laboratorio**
+
+| ID | RF-UC- 01|
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Nombre | Sacar estadisticas del laboratorio|
-| Descripción| Proceso mediante el cual el usuario accede y obtiene un resumen analítico de los datos registrados en el laboratorio, permitiendo la interpretación y evaluación de la información obtenida, así como la identificación de patrones, tendencias o resultados relevantes que faciliten la toma de decisiones y el seguimiento de los experimentos realizados.|
+| Nombre | Visualizar estadisticas del laboratorio|
+| Descripción| Proceso mediante el cual el docente accede y obtiene un resumen analítico de los datos registrados en el laboratorio como (tasa de asistencia, tiempo de uso), permitiendo la interpretación y evaluación de la información obtenida, así como la identificación de patrones, tendencias o resultados relevantes que faciliten la toma de decisiones y el seguimiento de los experimentos realizados.|
 | Prioridad| Deseable|
 | Estabilidad| Media |
 | Fuente| Docente responsable del laboratorio|
-| Criterios de  aceptación | 1.El sistema debe permitir  al usuario poder seleccionar un rango de fechas , equipo prestado o grupo de trabajo para generar las estadisticas 2.Los datos deben ser concisos y precisos ,coincidiendo con la información previamente registrada en la base de datos del laboratorio  3.El acceso de la funcionalidad debe estar únicamente a usuarios autorizados  por ejemplo (docentes o administrativos)   |
+| Criterios de  aceptación | 1.El sistema debe permitir  al usuario poder seleccionar un rango de fechas. 2.Los datos deben ser concisos y precisos ,coincidiendo con la información previamente registrada en la base de datos del laboratorio  3.El acceso de la funcionalidad debe estar únicamente a usuarios autorizados  por ejemplo (docentes o administrativos)   |
 | Dependencias| Modulo de generación de reportes de uso de laboratorio (uc-16 )|
 | Comentarios| Se recomienda incluir gráficos estadísticos (barras o pastel)para una visualización mas clara  de los datos|
 <br>
 
+#### **RF-UC-02 – Registrar solicitud de préstamo de equipo**
 
+| **Campo** | **Descripción** |
+|------------|-----------------|
+| **ID** | RF-UC-02 |
+| **Nombre** | Registrar solicitud de préstamo de equipo |
+| **Descripción** | Permite al usuario (estudiante o docente) realizar la solicitud de préstamo de un equipo disponible (portátil, tablet, cámara, kit, etc.) a través del sistema, especificando fechas, tipo de equipo y motivo de uso. El sistema valida la disponibilidad y el estado del usuario antes de aceptar la solicitud. |
+| **Prioridad** | Alta |
+| **Estabilidad** | Alta |
+| **Fuente** | Encargada de préstamos |
+| **Criterios de aceptación** | 1. El sistema debe permitir al usuario seleccionar tipo de equipo, rango de fechas y motivo del préstamo.<br>2. El sistema debe validar que el usuario no tenga sanciones activas ni otro préstamo vigente.<br>3. Debe confirmar la disponibilidad del equipo.<br>4. Debe generarse un comprobante digital con código único de solicitud. |
+| **Dependencias** | Módulo de gestión de inventario (RF-UC-10) y autenticación de usuarios. |
+| **Comentarios** | Se recomienda incluir una vista de calendario para seleccionar fechas disponibles y evitar traslapes de reservas. |
+
+---
+
+#### **RF-UC-03 – Registrar entrega de equipo prestado**
+
+| **Campo** | **Descripción** |
+|------------|-----------------|
+| **ID** | RF-UC-03 |
+| **Nombre** | Registrar entrega de equipo prestado |
+| **Descripción** | Proceso mediante el cual el encargado de préstamos registra la entrega física del equipo al usuario, verificando identidad mediante carnet o QR y completando un checklist digital del estado del equipo antes de la entrega. |
+| **Prioridad** | Alta |
+| **Estabilidad** | Media |
+| **Fuente** | Encargada de préstamos |
+| **Criterios de aceptación** | 1. El sistema debe permitir escanear el código del equipo y del carnet del usuario.<br>2. Debe mostrar el checklist de revisión del estado físico.<br>3. No debe permitirse finalizar la entrega sin completar el checklist.<br>4. Debe actualizar automáticamente el estado del equipo a “Prestado”. |
+| **Dependencias** | RF-UC-02 (solicitud de préstamo) y RF-UC-10 (inventario). |
+| **Comentarios** | Se recomienda incluir captura fotográfica del equipo antes de la entrega como evidencia. |
+
+---
+
+#### **RF-UC-04 – Registrar devolución de equipo prestado**
+
+| **Campo** | **Descripción** |
+|------------|-----------------|
+| **ID** | RF-UC-04 |
+| **Nombre** | Registrar devolución de equipo prestado |
+| **Descripción** | Permite al encargado registrar la devolución del equipo, verificando su estado físico y funcional, actualizando el inventario y calculando automáticamente multas por retraso o daños. |
+| **Prioridad** | Alta |
+| **Estabilidad** | Alta |
+| **Fuente** | Encargada de préstamos / Técnico de soporte |
+| **Criterios de aceptación** | 1. El sistema debe escanear el código del equipo y asociarlo al préstamo activo.<br>2. Debe permitir registrar observaciones o daños detectados.<br>3. Debe calcular automáticamente la multa por retraso.<br>4. El estado del equipo debe actualizarse a “Disponible” o “En mantenimiento”. |
+| **Dependencias** | RF-UC-03 (entrega de equipo) y módulo de mantenimiento. |
+| **Comentarios** | Se recomienda generar comprobante digital de devolución y enviar correo con el resumen del préstamo. |
+
+---
+
+#### **RF-UC-05 – Enviar alertas de vencimiento y sanciones**
+
+| **Campo** | **Descripción** |
+|------------|-----------------|
+| **ID** | RF-UC-05 |
+| **Nombre** | Enviar alertas de vencimiento y sanciones |
+| **Descripción** | Funcionalidad mediante la cual el sistema notifica automáticamente a los usuarios cuando un préstamo está próximo a vencer o cuando se genera una multa o sanción por retraso. |
+| **Prioridad** | Media |
+| **Estabilidad** | Alta |
+| **Fuente** | Dirección de TI / Encargada de préstamos |
+| **Criterios de aceptación** | 1. El sistema debe enviar alertas automáticas 24h antes del vencimiento y cada día de retraso.<br>2. Debe notificar por correo institucional y mensaje interno.<br>3. Las multas generadas deben registrarse automáticamente.<br>4. Solo usuarios y administradores autorizados podrán ver las sanciones. |
+| **Dependencias** | RF-UC-02 al RF-UC-04 (flujo de préstamo completo) y módulo de notificaciones. |
+| **Comentarios** | Se sugiere incluir recordatorio visual en el panel del usuario al iniciar sesión. |
+
+---
+
+###  RF-UC-06 – Registro y Control de Préstamo de Laboratorios
+ 
+| **Campo** | **Descripción** |
+|------------|-----------------|
+| **ID** | RF-011 |
+| **Nombre** | Registro y Control de Préstamo de Laboratorios |
+| **Descripción** | El sistema deberá permitir que los usuarios (docentes o investigadores) soliciten el préstamo de laboratorios especializados, indicando la fecha, hora y propósito académico. El sistema verificará la disponibilidad del espacio y generará un código único de reserva. |
+| **Entradas** | Solicitud del usuario con datos del laboratorio, fecha, hora y motivo. |
+| **Procesamiento** | Validación de disponibilidad, verificación de permisos y generación de registro en el historial. |
+| **Salidas** | Confirmación de reserva y notificación al usuario. |
+| **Actores Involucrados** | Docente, Investigador, Auxiliar de Laboratorio |
+| **Prioridad** | Alta |
 
 ### 3.2 Requisitos de interfaz externa
 
@@ -1981,7 +1971,7 @@ proporcionando contexto y flujos de trabajo.
 
 **Lista de Casos de Uso del Sistema:**
 
-- **CU-001**: Solicitar Préstamo de equipo
+- **CU-01**: Solicitar Préstamo de equipo
 - **CU-002**: Realizar Devolución de Material
 - **CU-003**: Registrar Nuevo Usuario
 - **CU-004**: Buscar Material en Catálogo
@@ -2029,7 +2019,7 @@ proporcionando contexto y flujos de trabajo.
 ---
  
 ## **Subcasos Extendidos**
- 
+
 ### **CU-01.A: Notificar al Usuario Reserva Exitosa**
  
 | **Campo** | **Descripción** |
