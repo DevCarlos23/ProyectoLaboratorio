@@ -762,7 +762,7 @@ Aunque estas funcionalidades no se implementarán en la versión 1.0, la arquite
 
 ---
 
-###  RF-LAB-001 – Registro y Control de Préstamo de Laboratorios
+####  RF-LAB-001 – Registro y Control de Préstamo de Laboratorios
  
 | **Campo** | **Detalle** |
 |------------|-------------|
@@ -776,7 +776,7 @@ Aunque estas funcionalidades no se implementarán en la versión 1.0, la arquite
 | **Dependencias** | Módulo de autenticación de usuarios, módulo de calendario de disponibilidad. |
 | **Comentarios** | Este requerimiento extiende la funcionalidad del préstamo de recursos hacia los laboratorios físicos. |
 
-###  RF-LAB-002 –  Validación de Disponibilidad y Capacidad del Laboratorio
+####  RF-LAB-002 –  Validación de Disponibilidad y Capacidad del Laboratorio
 
 | **Campo** | **Detalle** |
 |------------|-------------|
@@ -790,7 +790,7 @@ Aunque estas funcionalidades no se implementarán en la versión 1.0, la arquite
 | **Dependencias** | RF-LAB-001 (registro de préstamos), base de datos de laboratorios y aforos. |
 | **Comentarios** | Permite mantener la integridad de la información de reservas y la seguridad de los usuarios. |
 
-### RF-LAB-003 – Control de Acceso y Registro de Uso del Laboratorio
+#### RF-LAB-003 – Control de Acceso y Registro de Uso del Laboratorio
 
 | **Campo** | **Detalle** |
 |------------|-------------|
@@ -804,7 +804,7 @@ Aunque estas funcionalidades no se implementarán en la versión 1.0, la arquite
 | **Dependencias** | RF-LAB-001 (registro de préstamos), módulo de autenticación. |
 | **Comentarios** | Mejora la trazabilidad y seguridad dentro de las instalaciones académicas. |
 
-###  RF-LAB-004 –  Generación de Reportes de Uso de Laboratorios
+####  RF-LAB-004 –  Generación de Reportes de Uso de Laboratorios
 
 | **Campo** | **Detalle** |
 |------------|-------------|
