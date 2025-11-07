@@ -762,18 +762,61 @@ Aunque estas funcionalidades no se implementarán en la versión 1.0, la arquite
 
 ---
 
-###  RF-UC-06 – Registro y Control de Préstamo de Laboratorios
+###  RF-LAB-001 – Registro y Control de Préstamo de Laboratorios
  
-| **Campo** | **Descripción** |
-|------------|-----------------|
-| **ID** | RF-011 |
-| **Nombre** | Registro y Control de Préstamo de Laboratorios |
-| **Descripción** | El sistema deberá permitir que los usuarios (docentes o investigadores) soliciten el préstamo de laboratorios especializados, indicando la fecha, hora y propósito académico. El sistema verificará la disponibilidad del espacio y generará un código único de reserva. |
-| **Entradas** | Solicitud del usuario con datos del laboratorio, fecha, hora y motivo. |
-| **Procesamiento** | Validación de disponibilidad, verificación de permisos y generación de registro en el historial. |
-| **Salidas** | Confirmación de reserva y notificación al usuario. |
-| **Actores Involucrados** | Docente, Investigador, Auxiliar de Laboratorio |
+| **Campo** | **Detalle** |
+|------------|-------------|
+| **ID** | RF-LAB-001 |
+| **Nombre** | Registro y Control de Préstamos de Laboratorio |
+| **Descripción** | El sistema deberá permitir que los usuarios (docentes o estudiantes) soliciten el préstamo de laboratorios indicando fecha, hora, duración y propósito del uso. El sistema verificará la disponibilidad y registrará la reserva si no existen conflictos. |
 | **Prioridad** | Alta |
+| **Estabilidad** | Alta |
+| **Fuente** | Requerimiento funcional derivado de la gestión de espacios académicos en BiblioSys |
+| **Criterios de aceptación** | - El sistema valida que no haya reservas duplicadas.<br>- El usuario recibe confirmación automática del préstamo.<br>- Se genera un código de reserva único. |
+| **Dependencias** | Módulo de autenticación de usuarios, módulo de calendario de disponibilidad. |
+| **Comentarios** | Este requerimiento extiende la funcionalidad del préstamo de recursos hacia los laboratorios físicos. |
+
+###  RF-LAB-002 –  Validación de Disponibilidad y Capacidad del Laboratorio
+
+| **Campo** | **Detalle** |
+|------------|-------------|
+| **ID** | RF-LAB-002 |
+| **Nombre** | Validación de Disponibilidad y Capacidad del Laboratorio |
+| **Descripción** | El sistema deberá mostrar en tiempo real la disponibilidad y capacidad de cada laboratorio, evitando sobreasignaciones y asegurando el cumplimiento de límites de aforo establecidos. |
+| **Prioridad** | Alta |
+| **Estabilidad** | Media |
+| **Fuente** | Solicitud del área de infraestructura académica |
+| **Criterios de aceptación** | - El sistema bloquea reservas en horarios ocupados.<br>- Muestra mensaje de error si el aforo es superado.<br>- Permite filtrar por tipo de laboratorio o capacidad. |
+| **Dependencias** | RF-LAB-001 (registro de préstamos), base de datos de laboratorios y aforos. |
+| **Comentarios** | Permite mantener la integridad de la información de reservas y la seguridad de los usuarios. |
+
+### RF-LAB-003 – Control de Acceso y Registro de Uso del Laboratorio
+
+| **Campo** | **Detalle** |
+|------------|-------------|
+| **ID** | RF-LAB-003 |
+| **Nombre** | Control de Acceso y Registro de Uso del Laboratorio |
+| **Descripción** | El sistema deberá registrar el ingreso y salida de los usuarios que utilicen laboratorios, mediante lectura de carnet institucional o código QR, para garantizar control de asistencia y trazabilidad de uso. |
+| **Prioridad** | Media |
+| **Estabilidad** | Alta |
+| **Fuente** | Política de control institucional de recursos físicos |
+| **Criterios de aceptación** | - Solo usuarios con reservas activas pueden ingresar.<br>- Se genera registro de ingreso y salida en el sistema.<br>- El historial queda disponible para reportes administrativos. |
+| **Dependencias** | RF-LAB-001 (registro de préstamos), módulo de autenticación. |
+| **Comentarios** | Mejora la trazabilidad y seguridad dentro de las instalaciones académicas. |
+
+###  RF-LAB-004 –  Generación de Reportes de Uso de Laboratorios
+
+| **Campo** | **Detalle** |
+|------------|-------------|
+| **ID** | RF-LAB-004 |
+| **Nombre** | Generación de Reportes de Uso de Laboratorios |
+| **Descripción** | El sistema deberá generar reportes automáticos y personalizados sobre el uso de laboratorios, indicando número de reservas, usuarios frecuentes, horarios de mayor demanda y uso por facultad. |
+| **Prioridad** | Media |
+| **Estabilidad** | Media |
+| **Fuente** | Dirección Académica y Administrador del Sistema |
+| **Criterios de aceptación** | - Reportes exportables en PDF y Excel.<br>- Filtros por fecha, tipo de laboratorio y usuario.<br>- Visualización gráfica en dashboard administrativo. |
+| **Dependencias** | RF-LAB-001, RF-LAB-003 (datos históricos de uso). |
+| **Comentarios** | Permite análisis estadístico para la toma de decisiones y planificación de recursos. |
 
 ### 3.2 Requisitos de interfaz externa
 
