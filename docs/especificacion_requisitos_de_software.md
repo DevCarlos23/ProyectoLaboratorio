@@ -2085,6 +2085,68 @@ proporcionando contexto y flujos de trabajo.
 | **Salidas** | Mensaje de no disponibilidad en pantalla o correo electrónico. |
 | **Flujo Principal** | 1. El sistema muestra mensaje “El equipo solicitado no está disponible actualmente”.<br>2. Ofrece opción para seleccionar otro equipo o programar reserva futura.<br>3. Fin del subcaso. |
 
+### **Caso de Uso: CU-002 – Realizar Devolución de Material**
+ 
+| **Campo** | **Descripción** |
+|------------|----------------|
+| **Nombre** | Realizar devolución de material |
+| **Actores** | Usuario del laboratorio (actor primario), Administrador del sistema (actor secundario) |
+| **Descripción** | Este caso de uso permite al administrador registrar la devolución de un artículo por parte del usuario. El sistema actualiza el estado del préstamo y genera las multas correspondientes si aplica. |
+| **Precondiciones** | 1. El material ha sido entregado al administrador.<br>2. El administrador ha iniciado sesión en el sistema.<br>3. Existe un registro de préstamo activo para el material. |
+| **Postcondiciones** | 1. El registro de préstamo se marca como “Cerrado” o “Devuelto”.<br>2. Se genera un registro de multa por retraso si aplica. |
+| **Flujo Principal** | 1. El administrador ingresa el código del material o del préstamo.<br>2. El sistema recupera la información del préstamo activo.<br>3. El administrador confirma la devolución del material.<br>4. El sistema calcula si hubo retraso y genera multa en caso necesario.<br>5. El sistema actualiza el estado del préstamo a “Devuelto”.<br>6. Fin del caso de uso. |
+| **Flujos Alternos** | **FA 2.1:** Material devuelto con retraso (se genera multa).<br>En el paso 4 del flujo principal, el sistema calcula la multa basada en el tiempo excedido y registra el valor correspondiente. |
+| **Flujos de Excepción** | **FE 2.1:** Material devuelto dañado.<br>En el paso 3 del flujo principal, el administrador marca el material como “dañado”. El sistema registra el daño y genera una notificación al usuario. |
+| **Requisitos Relacionados** | **RF 2.1:** El sistema debe poder identificar el préstamo activo a partir del código del material.<br>**RF 2.2:** El sistema debe recalcular las multas por retraso de acuerdo con las políticas vigentes. |
+ 
+## **CU-003: Registrar Nuevo Usuario**
+ 
+| **Campo** | **Descripción** |
+|------------|----------------|
+| **ID** | CU-003 |
+| **Nombre** | Registrar Nuevo Usuario |
+| **Actores** | Administrador del sistema (actor primario) |
+| **Descripción** | Este caso de uso permite al administrador registrar un nuevo usuario en el sistema. El sistema valida los datos ingresados, genera las credenciales y almacena la información en la base de datos. |
+| **Precondiciones** | 1. El administrador ha iniciado sesión en el sistema.<br>2. El sistema está disponible y conectado a la base de datos. |
+| **Postcondiciones** | 1. El usuario queda registrado en el sistema.<br>2. El sistema genera credenciales de acceso para el nuevo usuario. |
+| **Flujo Principal** | 1. El administrador accede al módulo “Gestión de Usuarios”.<br>2. El administrador selecciona la opción “Registrar nuevo usuario”.<br>3. El sistema muestra el formulario de registro.<br>4. El administrador ingresa los datos del usuario (nombre, correo, rol, etc.).<br>5. El sistema valida la información ingresada.<br>6. El sistema guarda los datos y genera las credenciales del usuario.<br>7. El sistema notifica al administrador que el registro fue exitoso.<br>8. Fin del caso de uso. |
+| **Flujos Alternos** | **FA 5.1:** Datos incompletos.<br>En el paso 5, si faltan campos obligatorios, el sistema muestra un mensaje de error solicitando completar la información. |
+| **Flujos de Excepción** | **FE 6.1:** Error al guardar en la base de datos.<br>En el paso 6, si ocurre un fallo en la conexión o escritura de datos, el sistema muestra el mensaje “No fue posible registrar al usuario. Intente nuevamente”. |
+| **Requisitos Relacionados** | **RF 003.1:** El sistema debe validar que no existan usuarios con el mismo correo electrónico.<br>**RF 003.2:** El sistema debe asignar un rol predeterminado al usuario según el tipo de cuenta. |
+
+ 
+## **CU-006: Renovar Préstamo**
+ 
+| **Campo** | **Descripción** |
+|------------|----------------|
+| **ID** | CU-006 |
+| **Nombre** | Renovar Préstamo |
+| **Actores** | Usuario del laboratorio (actor primario), Administrador del sistema (actor secundario) |
+| **Descripción** | Este caso de uso permite al usuario solicitar la renovación de un préstamo activo. El sistema verifica la disponibilidad del material y, si es posible, extiende la fecha de devolución. |
+| **Precondiciones** | 1. El usuario ha iniciado sesión en el sistema.<br>2. Existe un préstamo activo registrado en el sistema.<br>3. El material solicitado no está reservado por otro usuario. |
+| **Postcondiciones** | 1. La fecha de devolución del préstamo se actualiza.<br>2. El sistema registra la renovación en el historial de préstamos. |
+| **Flujo Principal** | 1. El usuario accede al módulo “Mis Préstamos”.<br>2. El usuario selecciona el préstamo que desea renovar.<br>3. El sistema verifica que el material esté disponible para renovación.<br>4. El sistema actualiza la fecha de devolución del préstamo.<br>5. El sistema notifica al usuario que la renovación fue exitosa.<br>6. Fin del caso de uso. |
+| **Flujos Alternos** | **FA 3.1:** Material reservado por otro usuario.<br>En el paso 3, si el material tiene una reserva activa, el sistema notifica al usuario que no es posible renovar el préstamo. |
+| **Flujos de Excepción** | **FE 4.1:** Error en la actualización del registro.<br>En el paso 4, si el sistema no puede guardar la nueva fecha, muestra el mensaje “No fue posible renovar el préstamo. Intente nuevamente.” |
+| **Requisitos Relacionados** | **RF 006.1:** El sistema debe validar la disponibilidad del material antes de la renovación.<br>**RF 006.2:** El sistema debe registrar la fecha de renovación en el historial del préstamo. |
+
+ 
+## **CU-007: Procesar Pago de Multa**
+ 
+| **Campo** | **Descripción** |
+|------------|----------------|
+| **ID** | CU-007 |
+| **Nombre** | Procesar Pago de Multa |
+| **Actores** | Usuario del laboratorio (actor primario), Administrador del sistema (actor secundario) |
+| **Descripción** | Este caso de uso permite al usuario pagar una multa generada por la devolución tardía o el daño de un material. El sistema registra el pago y actualiza el estado de la multa. |
+| **Precondiciones** | 1. El usuario ha iniciado sesión en el sistema.<br>2. Existe una multa activa asociada al usuario.<br>3. El sistema de pagos está disponible. |
+| **Postcondiciones** | 1. La multa se marca como pagada.<br>2. El sistema registra el pago en el historial de transacciones. |
+| **Flujo Principal** | 1. El usuario accede al módulo “Mis Multas”.<br>2. El usuario selecciona la multa pendiente de pago.<br>3. El sistema muestra el detalle de la multa y el monto a pagar.<br>4. El usuario selecciona el método de pago (efectivo, tarjeta, etc.).<br>5. El sistema procesa el pago.<br>6. El sistema actualiza el estado de la multa a “Pagada”.<br>7. El sistema genera un comprobante y lo muestra al usuario.<br>8. Fin del caso de uso. |
+| **Flujos Alternos** | **FA 5.1:** Pago cancelado por el usuario.<br>En el paso 5, si el usuario cancela la operación, el sistema retorna al listado de multas sin registrar cambios. |
+| **Flujos de Excepción** | **FE 5.2:** Error en la transacción.<br>En el paso 5, si ocurre un fallo con el proveedor de pagos, el sistema muestra el mensaje “Error en el procesamiento del pago. Intente nuevamente.” |
+| **Requisitos Relacionados** | **RF 007.1:** El sistema debe registrar todos los pagos realizados por los usuarios.<br>**RF 007.2:** El sistema debe generar un comprobante de pago para cada transacción exitosa. |
+
+ 
 
 <!-- 
 Opción 2: Plantilla para Subcasos Simples
