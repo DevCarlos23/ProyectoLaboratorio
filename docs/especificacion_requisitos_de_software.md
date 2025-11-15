@@ -631,7 +631,7 @@ No se permite contratación externa adicional ni adquisición de software propie
 - Personal: Se asume que el personal deberá contar con el conocimiento mínimo/básico de informática y el manejo de dispositivos de escaneo 
 - Tecnología: Se entiende que el hardware como computadores, impresoras y escáneres sean compatibles con los requisitos técnicos como el navegador web, puertos etc.
                                     
-### 2.5.1Dependencias 
+### 2.5.1 Dependencias 
 - Proveedor de Hosting: El sistema depende de la infraestructura del servidor, actualizaciones o problemas con el equipo 
 - Estudiante: El sistema depende del acceso de la base de datos o API para ver el estado del estudiante (activo/inactivo)
 - Escaner: El sistema depende de los dispositivos de códigos de barras para la entrega y compra de los equipos 
@@ -680,9 +680,6 @@ Aunque estas funcionalidades no se implementarán en la versión 1.0, la arquite
 | **Criterios de Aceptación** | 1. [Criterio medible 1]<br>2. [Criterio medible 2]<br>3. [Criterio medible 3] |
 | **Dependencias** | [RF-XXX, RF-YYY] o "Ninguna" |
 | **Comentarios** | [Cualquier información adicional relevante] |
-
-
-#### 3.1.1 Módulo de Generación de reportes
 
 #### **RF-UC-01 – Visualizar estadisticas del laboratorio**
 
@@ -817,6 +814,61 @@ Aunque estas funcionalidades no se implementarán en la versión 1.0, la arquite
 | **Criterios de aceptación** | - Reportes exportables en PDF y Excel.<br>- Filtros por fecha, tipo de laboratorio y usuario.<br>- Visualización gráfica en dashboard administrativo. |
 | **Dependencias** | RF-LAB-001, RF-LAB-003 (datos históricos de uso). |
 | **Comentarios** | Permite análisis estadístico para la toma de decisiones y planificación de recursos. |
+
+#### **RF-UC-006 – Visualizar materiales del laboratorio         **
+ 
+ 
+| **ID**                | RF-006 |
+|-----------------------|--------|
+| **Nombre**            | Visualizar materiales del laboratorio |
+| **Descripción**       | El sistema debe permitir que los usuarios visualicen una lista clara y organizada de los materiales disponibles, incluyendo herramientas, componentes y recursos básicos. La información debe estar actualizada y visible. |
+| **Prioridad**         | Media |
+| **Estabilidad**       | Media |
+| **Fuente**            | Consultar material y recursos del laboratorio |
+| **Criterios de Aceptación** | 1. [Se muestra un listado organizado de materiales]<br>2. [La información está actualizada]<br>3. [Acceso permitido sin permisos especiales] |
+| **Dependencias**      | Inventario básico del laboratorio |
+| **Comentarios**       | Disponible para cualquier usuario registrado. |
+ 
+#### **RF-UC-007 – Generar reporte general del laboratorio        **
+ 
+| **ID**                | RF-007 |
+|-----------------------|--------|
+| **Nombre**            | Generar reporte general del laboratorio |
+| **Descripción**       | El sistema debe permitir generar un informe completo con fallas reportadas, equipos utilizados, materiales solicitados y estadísticas generales. El reporte debe generarse sin errores y permitir su visualización|
+| **Prioridad**         | Alta |
+| **Estabilidad**       | Alta |
+| **Fuente**            | Consultar reporte general del laboratorio |
+| **Criterios de Aceptación** | 1. El reporte se genera sin errores.<br>2. Incluye todos los datos relevantes.<br>3. Se puede descargar en PDF. |
+| **Dependencias**      | Datos históricos, inventario, reportes |
+| **Comentarios**       | Usado par informar tanto a los usuarios como a los administradores |
+|
+ 
+#### **RF-UC-008 –  Actualizar datos del laboratorio  **
+ 
+| **ID**                | RF-008 |
+|-----------------------|--------|
+| **Nombre**            | Actualizar datos del laboratorio |
+| **Descripción**       | El sistema debe permitir al personal autorizado actualizar información importante del laboratorio, como horarios, disponibilidad y estado general. Los cambios deben reflejarse de inmediato y registrados. |
+| **Prioridad**         | Alta |
+| **Estabilidad**       | Media |
+| **Fuente**            |Modificar datos del laboratorio |
+| **Criterios de Aceptación** | 1. Los cambios se guardan correctamente.<br>2. La información se actualiza en tiempo real.<br>3. Solo usuarios con permisos pueden modificar datos. |
+| **Dependencias**      | Módulo de autenticación y permisos |
+| **Comentarios**       | Se vera la información a solo personas autorizadas |
+ 
+#### **RF-UC-009–Consultar tiempo restante del laboratorio   **
+ 
+ 
+| **ID**                | RF-009 |
+|-----------------------|--------|
+| **Nombre**            | Consultar tiempo restante del laboratorio |
+| **Descripción**       | El sistema debe permitir que el usuario consulte de manera clara cuánto tiempo le queda disponible en su sesión actual dentro del laboratorio. El sistema mostrará el tiempo restante en minutos u horas, actualizándose automáticamente para que el usuario pueda organizar su trabajo antes de que finalice su turno. |
+| **Prioridad**         | Alta |
+| **Estabilidad**       | Alta |
+| **Fuente**            | Consultar tiempo restante del laboratorio |
+| **Criterios de Aceptación** | 1. El usuario puede ver el tiempo restante en pantalla.<br>2. El tiempo debe actualizarse en tiempo real.<br>3. El sistema debe mostrar una alerta cuando falten pocos minutos. |
+| **Dependencias**      | Módulo de control de acceso y tiempo de uso |
+| **Comentarios**       | Útil para informar al usuario del tiempo que tiene |
 
 ### 3.2 Requisitos de interfaz externa
 
