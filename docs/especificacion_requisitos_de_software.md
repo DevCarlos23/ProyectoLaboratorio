@@ -140,11 +140,11 @@ Seguridad Física (Hardware): El sistema NO gestionará elementos de seguridad f
 
 | Nombre | Rol | Responsabilidades | Información de Contacto |
 |--------|-----|-------------------|-------------------------|
-| [Nombre completo] | Cliente/Patrocinador del Proyecto | - Aprobar requisitos<br>- Proporcionar retroalimentación<br>- Validar entregas<br>- Decisiones finales sobre alcance | Email: [correo]<br>Tel: [teléfono]<br>Organización: [nombre] |
-| [Nombre completo] | Gerente/Jefe de Proyecto | - Coordinar equipo de desarrollo<br>- Gestionar recursos y cronograma<br>- Punto de contacto principal con cliente<br>- Resolución de conflictos | Email: [correo]<br>Tel: [teléfono] |
-| [Nombre completo] | Analista de Requisitos | - Elicitación de requisitos<br>- Documentación de SRS<br>- Validación con stakeholders<br>- Gestión de cambios en requisitos | Email: [correo]<br>Tel: [teléfono] |
-| [Nombre completo] | Arquitecto de Software / Líder Técnico | - Diseño de arquitectura del sistema<br>- Decisiones técnicas<br>- Revisión de código<br>- Establecer estándares de desarrollo | Email: [correo]<br>Tel: [teléfono] |
-| [Nombre completo] | Líder de QA/Testing | - Diseño de estrategia de pruebas<br>- Validación de requisitos<br>- Asegurar calidad del producto<br>- Reportes de defectos | Email: [correo]<br>Tel: [teléfono] |
+| **Jhon Casas** | Arquitecto de Software / Líder Técnico | - Diseño de arquitectura del sistema<br>- Tomar decisiones técnicas<br>- Revisar código y estándares<br>- Supervisar integración de módulos | **Email:** jhonacasas@ucompensar.edu.com<br>**Tel:** +57 301 555 8421 |
+| **Carol Gonzales** | Analista de Requisitos | - Elicitación y análisis de requisitos<br>- Documentar SRS<br>- Validación con usuarios y stakeholders<br>- Control de cambios en requisitos | **Email:** cdalugonzalez@ucompensar.edu.co<br>**Tel:** +57 300 912 4477 |
+| **Daniel Avila** | Gerente/Jefe de Proyecto | - Coordinar al equipo de desarrollo<br>- Gestionar tiempos y recursos<br>- Punto principal de contacto interno<br>- Gestión de riesgos y resolución de conflictos | **Email:** dsavila@ucompensar.edu.co<br>**Tel:** +57 320 774 9832 |
+| **Carlos Bonilla** | Líder de QA/Testing | - Diseñar plan y estrategia de pruebas<br>- Validación de requisitos implementados<br>- Reporte y seguimiento de defectos<br>- Garantizar calidad del producto | **Email:** cbonilla@ucompensar.edu.co<br>**Tel:** +57 313 660 5248 |
+
 
 <!-- 
 NOTA PARA PROYECTOS ACADÉMICOS:
@@ -2198,7 +2198,42 @@ proporcionando contexto y flujos de trabajo.
 | **Flujos de Excepción** | **FE 5.2:** Error en la transacción.<br>En el paso 5, si ocurre un fallo con el proveedor de pagos, el sistema muestra el mensaje “Error en el procesamiento del pago. Intente nuevamente.” |
 | **Requisitos Relacionados** | **RF 007.1:** El sistema debe registrar todos los pagos realizados por los usuarios.<br>**RF 007.2:** El sistema debe generar un comprobante de pago para cada transacción exitosa. |
 
- 
+| Campo | Descripción |
+| :--- | :--- |
+| **ID** | CU-019 |
+| **Nombre** | **Reservar Espacio de Laboratorio** |
+| **Actores** | Usuario del Laboratorio |
+| **Descripción** | Permite al Usuario seleccionar una fecha, hora y un espacio o equipo fijo dentro del laboratorio para asegurar su uso en un periodo determinado. |
+|---|---|
+| **Precondiciones** | 1. Usuario ha iniciado sesión.<br>2. Espacio/recurso disponible.<br>3. El Usuario debe contar con identificación, carnet institucional y registro previo en el sistema. |
+|---|---|
+| **Postcondiciones** | 1. Se registra la reserva en el sistema, vinculada al Usuario y al espacio.<br>2. El espacio de laboratorio queda marcado como "Reservado" en el calendario de recursos. |
+|---|---|
+| **Flujo Principal (Pasos)** | 1. Usuario selecciona "Reservar Laboratorio/Espacio".<br>2. Sistema muestra disponibilidad .<br>3. Usuario selecciona fecha, horas y espacio.<br>4. Sistema verifica disponibilidad y límites.<br>5. Usuario confirma.<br>6. Sistema registra la reserva.<br>7. Sistema envía confirmación al Usuario. |
+|---|---|
+| **Flujos Alternos** | **FA 19.1:** Modificación de Reserva (cambio de hora). |
+| **Flujos de Excepción** | **FE 19.1:** Límite de Reserva Excedido. |
+|---|---|
+| **Requisitos Relacionados** | **RF 19.1:** El sistema debe mostrar la disponibilidad de los espacios de laboratorio en tiempo real.<br>**RF 19.2:** El sistema debe permitir definir diferentes tipos de espacios con reglas de reserva específicas.<br>**RNF 19.1:** La interfaz de reserva debe proveer una vista calendario clara para facilitar la selección de horarios. |
+
+ | Campo | Descripción |
+| :--- | :--- |
+| **ID** | CU-009 |
+| **Nombre** | **Configurar Parámetros del Sistema** |
+| **Actores** | Administrador del Sistema |
+| **Descripción** | Permite al Administrador definir y ajustar los parámetros generales del sistema, incluyendo horarios de funcionamiento, políticas de préstamo y requisitos de los usuarios para el uso de equipos. |
+|---|---|
+| **Precondiciones** | 1. El Administrador ha iniciado sesión en el sistema.<br>2. El Administrador cuenta con permisos de configuración.<br>3. El sistema está en funcionamiento y con acceso a la base de datos de parámetros. |
+|---|---|
+| **Postcondiciones** | 1. Los parámetros quedan registrados y activos en el sistema.<br>2. Los cambios afectan inmediatamente las reglas de préstamo y disponibilidad de equipos. |
+|---|---|
+| **Flujo Principal** | 1. El Administrador accede al módulo “Parámetros del Sistema”.<br>2. El sistema muestra los parámetros configurables actuales.<br>3. El Administrador selecciona el parámetro a modificar o agregar.<br>4. El Administrador ingresa los nuevos valores (ej. horario de funcionamiento, política de préstamo, requisitos del usuario).<br>5. El sistema valida los valores ingresados.<br>6. El Administrador confirma la configuración.<br>7. El sistema guarda los cambios y actualiza las reglas de préstamo. |
+|---|---|
+| **Flujos Alternativos** | **FA 9.1: Modificación Rechazada**<br>1. El Administrador ingresa valores fuera de rango permitido.<br>2. El sistema muestra un mensaje de error indicando el parámetro inválido.<br>3. El Administrador corrige los valores y repite el proceso. |
+| **Flujos de Excepción** | **FE 9.1: Error de Conexión**<br>1. El sistema no puede acceder a la base de datos de parámetros.<br>2. Se muestra mensaje “Error al guardar configuración, intente más tarde”.<br>3. Se registra el error en el log del sistema. |
+|---|---|
+| **Parámetros del Sistema** | - Horario de funcionamiento: Días y horas en que se pueden solicitar y devolver equipos.<br>- Política de préstamo: Tiempo máximo de uso de los equipos (ejemplo: por horas o por días).<br>- Requisitos del usuario: Identificación válida, carnet institucional y registro previo en el sistema. |
+| **Requisitos Relacionados** | RF-009.1 (Gestión de parámetros configurables)<br>RF-009.2 (Validación de valores de configuración)<br>RNF-009.1 (Disponibilidad inmediata de cambios)<br>RNF-009.2 (Interfaz clara para administración) |
 
 <!-- 
 Opción 2: Plantilla para Subcasos Simples
